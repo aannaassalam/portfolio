@@ -16,7 +16,7 @@ import TechStack from "@/components/site/TechStack";
 import Seo from "@/components/Seo/Seo";
 import { BRAND, HERO } from "@/json/site/content";
 
-const SITE_URL = "https://synkinnovations.com";
+const SITE_URL = "https://www.synkinnovations.in";
 
 /**
  * Homepage narrative: problem → complexity → possibility → engineering →
