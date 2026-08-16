@@ -44,6 +44,54 @@ export function useGsapScope<T extends HTMLElement>(
 }
 
 /**
+ * Shared scroll energy, 0-1. ONE listener for the whole page, read every
+ * frame by every 3D scene: the point clouds loosen while you move and settle
+ * when you stop. A scrubbed scene that only maps position feels played back;
+ * reacting to velocity is what makes it feel driven.
+ */
+const scrollEnergy = { current: 0 };
+let energyListening = false;
+
+function startScrollEnergy() {
+  if (energyListening || !checkWindow()) return;
+  energyListening = true;
+
+  let last = window.scrollY;
+  let frame = 0;
+
+  const decay = () => {
+    scrollEnergy.current *= 0.9;
+    if (scrollEnergy.current < 0.002) {
+      scrollEnergy.current = 0;
+      frame = 0;
+      return;
+    }
+    frame = requestAnimationFrame(decay);
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      const y = window.scrollY;
+      // ~90px of travel between frames reads as a full-energy flick.
+      const kick = Math.abs(y - last) / 90;
+      last = y;
+      scrollEnergy.current = Math.min(1, scrollEnergy.current + kick);
+      if (!frame) frame = requestAnimationFrame(decay);
+    },
+    { passive: true }
+  );
+}
+
+/** Ref handle onto the shared energy. Never triggers a React render. */
+export function useScrollEnergy() {
+  useEffect(() => {
+    startScrollEnergy();
+  }, []);
+  return scrollEnergy;
+}
+
+/**
  * Subscribes to a media query. useSyncExternalStore rather than
  * useState-in-an-effect: the server snapshot is explicit, and the value is
  * read during render instead of one paint late.

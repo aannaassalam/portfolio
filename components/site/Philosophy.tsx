@@ -167,7 +167,11 @@ export default function Philosophy() {
                 cx={node.chaos.x}
                 cy={node.chaos.y}
                 r="2.5"
-                fill={node.column === 0 || node.column === COLUMNS - 1 ? "#C4B5FD" : "#7C3AED"}
+                fill={
+                  node.column === 0 || node.column === COLUMNS - 1
+                    ? "#C4B5FD"
+                    : "#7C3AED"
+                }
               />
             ))}
           </svg>

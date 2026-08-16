@@ -18,7 +18,10 @@ const point = (index: number) => ({
 export default function TechStack() {
   const [focused, setFocused] = useState<number | null>(null);
 
-  const scope = useGsapScope<HTMLElement>(({ scope }) => revealChildren(scope), []);
+  const scope = useGsapScope<HTMLElement>(
+    ({ scope }) => revealChildren(scope),
+    []
+  );
 
   const isLit = (index: number) =>
     focused === null ||
@@ -31,7 +34,7 @@ export default function TechStack() {
   return (
     <section
       ref={scope}
-      className="grain relative overflow-hidden border-t border-ink-800 bg-ink-900 py-28 md:py-36"
+      className="grain relative overflow-hidden seam bg-ink-900 py-28 md:py-36"
     >
       <div className="shell">
         <div className="flex flex-wrap items-end justify-between gap-6">
@@ -46,7 +49,10 @@ export default function TechStack() {
               Built on technology that moves.
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-slate-muted" data-reveal>
+          <p
+            className="max-w-sm text-sm leading-relaxed text-slate-muted"
+            data-reveal
+          >
             We pick tools for how well they hold up in year three, not how they
             look in a launch post.
           </p>

@@ -127,7 +127,10 @@ export default function Hero() {
             {HERO.lede}
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-3" data-hero-fade>
+          <div
+            className="mt-10 flex flex-wrap items-center gap-3"
+            data-hero-fade
+          >
             <Cta href={HERO.primaryCta.href}>{HERO.primaryCta.label}</Cta>
             <Cta href={HERO.secondaryCta.href} variant="ghost" icon="↓">
               {HERO.secondaryCta.label}

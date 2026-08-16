@@ -8,13 +8,13 @@ import SectionIntro from "@/ui/SectionIntro/SectionIntro";
  * how a system is built, not a wall of numbers nobody can verify.
  */
 export default function Principles() {
-  const scope = useGsapScope<HTMLElement>(({ scope }) => revealChildren(scope), []);
+  const scope = useGsapScope<HTMLElement>(
+    ({ scope }) => revealChildren(scope),
+    []
+  );
 
   return (
-    <section
-      ref={scope}
-      className="border-t border-ink-800 bg-ink-950 py-28 md:py-36"
-    >
+    <section ref={scope} className="seam bg-ink-950 py-28 md:py-36">
       <div className="shell">
         <SectionIntro
           eyebrow="Engineering standards"

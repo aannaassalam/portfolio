@@ -34,7 +34,10 @@ export const COMPLEXITY = {
 
 export const PHILOSOPHY = {
   eyebrow: "The problem",
-  headline: ["Technology is rarely the problem.", "The way it's engineered is."],
+  headline: [
+    "Technology is rarely the problem.",
+    "The way it's engineered is."
+  ],
   body: [
     "Most teams don't fail because they picked the wrong framework. They fail because systems were bolted together faster than they were understood — and every new feature costs more than the last.",
     "We start by mapping the whole system. Then we rebuild it so the next decade of changes stays cheap."
@@ -119,18 +122,90 @@ export type Service = (typeof SERVICES)[number];
 
 /** x/y are normalised 0–1 constellation coordinates. */
 export const TECHNOLOGIES = [
-  { name: "React", note: "Interface layer", x: 0.16, y: 0.3, group: "frontend" },
-  { name: "Next.js", note: "App framework", x: 0.31, y: 0.14, group: "frontend" },
-  { name: "TypeScript", note: "Type safety end to end", x: 0.3, y: 0.5, group: "frontend" },
-  { name: "Three.js", note: "Real-time 3D", x: 0.13, y: 0.68, group: "frontend" },
-  { name: "React Native", note: "Mobile runtime", x: 0.44, y: 0.78, group: "frontend" },
-  { name: "Node.js", note: "Service runtime", x: 0.47, y: 0.36, group: "backend" },
-  { name: "Python", note: "Data & ML services", x: 0.58, y: 0.62, group: "backend" },
-  { name: "PostgreSQL", note: "Relational core", x: 0.63, y: 0.24, group: "data" },
-  { name: "MongoDB", note: "Document storage", x: 0.74, y: 0.48, group: "data" },
-  { name: "Docker", note: "Reproducible builds", x: 0.83, y: 0.72, group: "infra" },
-  { name: "AWS", note: "Cloud infrastructure", x: 0.86, y: 0.3, group: "infra" },
-  { name: "LLM APIs", note: "Applied intelligence", x: 0.68, y: 0.85, group: "ai" }
+  {
+    name: "React",
+    note: "Interface layer",
+    x: 0.16,
+    y: 0.3,
+    group: "frontend"
+  },
+  {
+    name: "Next.js",
+    note: "App framework",
+    x: 0.31,
+    y: 0.14,
+    group: "frontend"
+  },
+  {
+    name: "TypeScript",
+    note: "Type safety end to end",
+    x: 0.3,
+    y: 0.5,
+    group: "frontend"
+  },
+  {
+    name: "Three.js",
+    note: "Real-time 3D",
+    x: 0.13,
+    y: 0.68,
+    group: "frontend"
+  },
+  {
+    name: "React Native",
+    note: "Mobile runtime",
+    x: 0.44,
+    y: 0.78,
+    group: "frontend"
+  },
+  {
+    name: "Node.js",
+    note: "Service runtime",
+    x: 0.47,
+    y: 0.36,
+    group: "backend"
+  },
+  {
+    name: "Python",
+    note: "Data & ML services",
+    x: 0.58,
+    y: 0.62,
+    group: "backend"
+  },
+  {
+    name: "PostgreSQL",
+    note: "Relational core",
+    x: 0.63,
+    y: 0.24,
+    group: "data"
+  },
+  {
+    name: "MongoDB",
+    note: "Document storage",
+    x: 0.74,
+    y: 0.48,
+    group: "data"
+  },
+  {
+    name: "Docker",
+    note: "Reproducible builds",
+    x: 0.83,
+    y: 0.72,
+    group: "infra"
+  },
+  {
+    name: "AWS",
+    note: "Cloud infrastructure",
+    x: 0.86,
+    y: 0.3,
+    group: "infra"
+  },
+  {
+    name: "LLM APIs",
+    note: "Applied intelligence",
+    x: 0.68,
+    y: 0.85,
+    group: "ai"
+  }
 ] as const;
 
 /** Which nodes are wired to which, by index. Keeps the graph deliberate. */
@@ -362,7 +437,10 @@ export const CONTACT = {
   eyebrow: "Let's build it",
   headline: "Have something worth building?",
   lede: "Let's turn the idea into something real.",
-  primaryCta: { label: "Start a conversation", href: "mailto:hello@synkinnovations.com" },
+  primaryCta: {
+    label: "Start a conversation",
+    href: "mailto:hello@synkinnovations.com"
+  },
   secondaryCta: { label: "View our capabilities", href: "#services" },
   responseNote: "We reply to every enquiry within two business days."
 };
@@ -394,7 +472,10 @@ export const FOOTER = {
       links: [
         { label: "LinkedIn", href: "https://www.linkedin.com" },
         { label: "GitHub", href: "https://github.com" },
-        { label: "hello@synkinnovations.com", href: "mailto:hello@synkinnovations.com" }
+        {
+          label: "hello@synkinnovations.com",
+          href: "mailto:hello@synkinnovations.com"
+        }
       ]
     }
   ],

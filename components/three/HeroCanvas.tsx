@@ -16,7 +16,7 @@ export default function HeroCanvas({
 
   return (
     <Stage
-      camera={{ position: [0, 0, 7.2], fov: 46 }}
+      camera={{ position: [0, 0, 7.8], fov: 46 }}
       fallback={
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.32),transparent_70%)]" />

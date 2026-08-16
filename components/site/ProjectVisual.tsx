@@ -103,7 +103,14 @@ export default function ProjectVisual({
       />
 
       {nodes.map((node, i) => (
-        <circle key={i} cx={node.x} cy={node.y} r={node.r} fill={accent} opacity="0.7" />
+        <circle
+          key={i}
+          cx={node.x}
+          cy={node.y}
+          r={node.r}
+          fill={accent}
+          opacity="0.7"
+        />
       ))}
       <line
         x1="40"
@@ -125,7 +132,15 @@ export default function ProjectVisual({
         fill="#101014"
         stroke="#1F1F28"
       />
-      <rect x="58" y="62" width="88" height="6" rx="3" fill={accent} opacity="0.8" />
+      <rect
+        x="58"
+        y="62"
+        width="88"
+        height="6"
+        rx="3"
+        fill={accent}
+        opacity="0.8"
+      />
       <rect x="58" y="80" width="150" height="4" rx="2" fill="#1F1F28" />
       <rect x="58" y="92" width="120" height="4" rx="2" fill="#1F1F28" />
 

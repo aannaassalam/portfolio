@@ -20,7 +20,10 @@ export default function About() {
         stagger: 0.12,
         duration: 1,
         ease: "expo.out",
-        scrollTrigger: { trigger: scope.querySelector("[data-equation]"), start: "top 75%" }
+        scrollTrigger: {
+          trigger: scope.querySelector("[data-equation]"),
+          start: "top 75%"
+        }
       }
     );
 
@@ -44,7 +47,7 @@ export default function About() {
     <section
       ref={scope}
       id="about"
-      className="grain relative overflow-hidden border-t border-ink-800 bg-ink-900 py-28 md:py-40"
+      className="grain relative overflow-hidden seam bg-ink-900 py-28 md:py-40"
     >
       <div className="shell">
         <SectionIntro

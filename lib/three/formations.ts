@@ -257,7 +257,11 @@ const cloud: Formation = (count, rand) => {
 
   for (let r = 0; r < regions; r++) {
     const a = (r / regions) * TAU;
-    centres.push([Math.cos(a) * 1.75, Math.sin(a * 2) * 0.62, Math.sin(a) * 1.2]);
+    centres.push([
+      Math.cos(a) * 1.75,
+      Math.sin(a * 2) * 0.62,
+      Math.sin(a) * 1.2
+    ]);
   }
 
   for (let i = 0; i < count; i++) {

@@ -37,7 +37,10 @@ export default function Cta({
         className
       )}
       {...(external
-        ? { rel: "noreferrer", target: href.startsWith("http") ? "_blank" : undefined }
+        ? {
+            rel: "noreferrer",
+            target: href.startsWith("http") ? "_blank" : undefined
+          }
         : {})}
       {...props}
     >

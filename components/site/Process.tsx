@@ -56,7 +56,7 @@ export default function Process() {
     <section
       ref={scope}
       id="process"
-      className="grain relative overflow-hidden border-t border-ink-800 bg-ink-900 py-28 md:py-40"
+      className="grain relative overflow-hidden seam bg-ink-900 py-28 md:py-40"
     >
       <div className="shell">
         <SectionIntro

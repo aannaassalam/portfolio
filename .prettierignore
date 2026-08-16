@@ -1,0 +1,16 @@
+# Build output and dependencies
+/.next/
+/out/
+/build
+/node_modules
+
+# Lockfile: machine-generated, and reformatting it produces a huge, useless diff
+package-lock.json
+
+# Generated brand assets — written by brand-source/build.py, not by hand
+/public/brand/
+/public/sitemap*.xml
+/public/robots.txt
+
+# Generated logo geometry
+/json/site/logo.ts

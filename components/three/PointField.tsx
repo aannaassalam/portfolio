@@ -59,7 +59,17 @@ interface PointFieldProps {
   /** Higher settles faster. */
   lambda?: number;
   seed?: number;
+  /**
+   * Shared scroll energy, 0-1. Loosens the cloud and fattens the points while
+   * the page is moving, so the scene reacts to velocity and not just position.
+   */
+  energy?: RefObject<number>;
+  /** Outward push at the midpoint of a formation change, in world units. */
+  burst?: number;
 }
+
+/** Seconds a formation change takes to travel through its bulge. */
+const MORPH_SECONDS = 0.9;
 
 export default function PointField({
   count,
@@ -72,7 +82,9 @@ export default function PointField({
   colorA = "#7C3AED",
   colorB = "#DDD6FE",
   lambda = 2.4,
-  seed = 1337
+  seed = 1337,
+  energy,
+  burst = 0.55
 }: PointFieldProps) {
   const positionAttr = useRef<THREE.BufferAttribute>(null);
   const edgeAttr = useRef<THREE.BufferAttribute>(null);
@@ -81,6 +93,10 @@ export default function PointField({
   // Formation targets, built on first use and kept for the component's life.
   // Only ever touched from the render loop, never during render.
   const bases = useRef(new Map<FormationName, Float32Array>());
+
+  // Morph state: 1 means settled. Reset to 0 whenever the target shape changes.
+  const settled = useRef(1);
+  const currentShape = useRef<FormationName>(formation);
 
   const scattered = useMemo(
     () => buildFormation("scatter", count, seed + 7),
@@ -130,6 +146,7 @@ export default function PointField({
     const dt = Math.min(delta, 0.05);
     const blend = 1 - Math.exp(-lambda * dt);
     const spread = Math.min(Math.max(dispersion?.current ?? 0, 0), 1);
+    const flow = Math.min(Math.max(energy?.current ?? 0, 0), 1);
     const live = attr.array as Float32Array;
 
     const cache = bases.current;
@@ -140,9 +157,35 @@ export default function PointField({
       cache.set(formation, base);
     }
 
-    for (let i = 0; i < live.length; i++) {
-      const target = base[i] + (scattered[i] - base[i]) * spread;
-      live[i] += (target - live[i]) * blend;
+    // A formation change travels through an outward bulge rather than sliding
+    // straight to the target — a straight lerp between two shapes reads as a
+    // cross-fade, not as one system becoming another.
+    if (currentShape.current !== formation) {
+      currentShape.current = formation;
+      settled.current = 0;
+    }
+    settled.current = Math.min(1, settled.current + dt / MORPH_SECONDS);
+    const bulge = burst * Math.sin(Math.PI * settled.current);
+
+    // Scroll energy loosens the cloud a little past its resting shape.
+    const loosen = Math.min(spread + flow * 0.14, 1.15);
+
+    for (let i = 0; i < live.length; i += 3) {
+      let tx = base[i] + (scattered[i] - base[i]) * loosen;
+      let ty = base[i + 1] + (scattered[i + 1] - base[i + 1]) * loosen;
+      let tz = base[i + 2] + (scattered[i + 2] - base[i + 2]) * loosen;
+
+      if (bulge > 0.001) {
+        const len = Math.sqrt(tx * tx + ty * ty + tz * tz) || 1;
+        const push = 1 + bulge / len;
+        tx *= push;
+        ty *= push;
+        tz *= push;
+      }
+
+      live[i] += (tx - live[i]) * blend;
+      live[i + 1] += (ty - live[i + 1]) * blend;
+      live[i + 2] += (tz - live[i + 2]) * blend;
     }
     attr.needsUpdate = true;
 
@@ -163,6 +206,8 @@ export default function PointField({
       u.uTime.value += dt;
       // Edges only read as structure while the system is organised.
       u.uOpacity.value = opacity * (1 - spread * 0.45);
+      // Points thicken slightly with scroll speed, like a longer exposure.
+      u.uSize.value = size * (1 + flow * 0.4);
     }
   });
 

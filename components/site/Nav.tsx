@@ -27,7 +27,8 @@ export default function Nav() {
     const paint = () => {
       frame = 0;
       const max = document.documentElement.scrollHeight - window.innerHeight;
-      const ratio = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+      const ratio =
+        max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
       if (progress.current) {
         // Plain width, not a scale transform: Tailwind's scale-x-* utility
         // composes transform from CSS variables and fought the inline value.
@@ -163,17 +164,19 @@ export default function Nav() {
         className="mt-2 rounded-3xl border border-ink-600/80 bg-ink-900/95 p-6 backdrop-blur-xl md:hidden"
       >
         <ul className="flex flex-col gap-1">
-          {[...NAV_LINKS, { label: "Contact", href: "#contact" }].map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="block border-b border-ink-700 py-4 text-2xl font-medium tracking-tight text-chalk last:border-0"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {[...NAV_LINKS, { label: "Contact", href: "#contact" }].map(
+            (link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block border-b border-ink-700 py-4 text-2xl font-medium tracking-tight text-chalk last:border-0"
+                >
+                  {link.label}
+                </a>
+              </li>
+            )
+          )}
         </ul>
       </div>
     </header>

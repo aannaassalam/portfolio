@@ -65,7 +65,7 @@ export default function Architecture() {
         <ArchitectureCanvas progress={progress} />
 
         {/* Vignette keeps the type legible wherever the camera happens to be. */}
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#050505_0%,transparent_28%,transparent_58%,#050505_96%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#050505_0%,rgba(5,5,5,0.55)_26%,rgba(5,5,5,0.35)_50%,rgba(5,5,5,0.72)_80%,#050505_97%)]" />
 
         <div className="shell absolute inset-x-0 top-1/2 -translate-y-1/2">
           <p className="eyebrow" data-arch-line>
@@ -90,7 +90,11 @@ export default function Architecture() {
 
         <ul className="shell absolute inset-x-0 bottom-10 flex flex-wrap gap-x-6 gap-y-2">
           {ARCHITECTURE.layers.map((layer) => (
-            <li key={layer.name} data-layer className="flex items-baseline gap-2">
+            <li
+              key={layer.name}
+              data-layer
+              className="flex items-baseline gap-2"
+            >
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-violet-300">
                 {layer.name}
               </span>

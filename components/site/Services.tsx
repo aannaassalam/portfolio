@@ -40,15 +40,17 @@ export default function Services() {
   const scope = useGsapScope<HTMLElement>(({ scope }) => {
     // One trigger per step. Six state updates for the whole section — the
     // per-frame work stays in the render loop, not in React.
-    scope.querySelectorAll<HTMLElement>("[data-step]").forEach((step, index) => {
-      ScrollTrigger.create({
-        trigger: step,
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => setActive(index),
-        onEnterBack: () => setActive(index)
+    scope
+      .querySelectorAll<HTMLElement>("[data-step]")
+      .forEach((step, index) => {
+        ScrollTrigger.create({
+          trigger: step,
+          start: "top center",
+          end: "bottom center",
+          onEnter: () => setActive(index),
+          onEnterBack: () => setActive(index)
+        });
       });
-    });
   }, []);
 
   if (reduced) {
@@ -134,9 +136,7 @@ export default function Services() {
           </div>
 
           <div className="relative order-first aspect-square w-full lg:order-none">
-            <ServicesCanvas
-              formation={SERVICES[active].id as FormationName}
-            />
+            <ServicesCanvas formation={SERVICES[active].id as FormationName} />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,#050505_78%)]" />
           </div>
         </div>

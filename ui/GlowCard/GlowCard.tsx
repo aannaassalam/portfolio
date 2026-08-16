@@ -20,7 +20,10 @@ export default function GlowCard({
       "--x",
       `${event.clientX - rect.left}px`
     );
-    event.currentTarget.style.setProperty("--y", `${event.clientY - rect.top}px`);
+    event.currentTarget.style.setProperty(
+      "--y",
+      `${event.clientY - rect.top}px`
+    );
   };
 
   return (

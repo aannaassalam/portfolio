@@ -4,7 +4,7 @@
 
 Two identical elliptical arcs, counter-rotating, overlapped just enough that
 they share a diagonal spine — two systems half a turn apart, running in
-phase. That is what *synk* means, and it is the argument the website makes:
+phase. That is what _synk_ means, and it is the argument the website makes:
 complexity brought into step.
 
 The mark is **drawn, not stroked**. It is emitted as filled outlines with a
@@ -24,16 +24,16 @@ measured; `verify.js` in the build now fails loudly if any file clips.
 
 ## Files
 
-| File | Use |
-| --- | --- |
-| `synk-logo-dark.svg` | **Primary.** Mark + SYNK, ink on light. Letterheads, documents, invoices. |
-| `synk-logo-light.svg` | Primary, reversed for dark backgrounds. |
-| `synk-logo-violet.svg` | Accent version. Screen only — never on paper. |
-| `synk-logo-full-dark/light.svg` | Adds the INNOVATIONS descriptor, tracked to exactly the width of SYNK. Use where the full legal name must appear. |
-| `synk-logo-stacked-dark/light.svg` | Square-ish spaces: social avatars, signage, merchandise. |
-| `synk-mark-dark/light/violet.svg` | Mark alone. Only where SYNK already appears nearby. |
-| `synk-favicon.svg` | Mark on a dark tile, for browser tabs. |
-| `synk-letterhead-a4.svg` | A4 letterhead. Logo at 46 mm, body area y≈56–258 mm. |
+| File                               | Use                                                                                                               |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `synk-logo-dark.svg`               | **Primary.** Mark + SYNK, ink on light. Letterheads, documents, invoices.                                         |
+| `synk-logo-light.svg`              | Primary, reversed for dark backgrounds.                                                                           |
+| `synk-logo-violet.svg`             | Accent version. Screen only — never on paper.                                                                     |
+| `synk-logo-full-dark/light.svg`    | Adds the INNOVATIONS descriptor, tracked to exactly the width of SYNK. Use where the full legal name must appear. |
+| `synk-logo-stacked-dark/light.svg` | Square-ish spaces: social avatars, signage, merchandise.                                                          |
+| `synk-mark-dark/light/violet.svg`  | Mark alone. Only where SYNK already appears nearby.                                                               |
+| `synk-favicon.svg`                 | Mark on a dark tile, for browser tabs.                                                                            |
+| `synk-letterhead-a4.svg`           | A4 letterhead. Logo at 46 mm, body area y≈56–258 mm.                                                              |
 
 ## Rules
 
@@ -62,6 +62,6 @@ explicitly, so pasting a group into another document cannot make it render
 filled. (That is a real failure mode: it is what happens when a group is
 lifted out of an SVG whose `fill="none"` lived only on the root element.)
 
-If your printer requires the logotype outlined too, run *Object → Path →
-Outline Stroke* once in Illustrator and save a separate file — do not
+If your printer requires the logotype outlined too, run _Object → Path →
+Outline Stroke_ once in Illustrator and save a separate file — do not
 overwrite these.

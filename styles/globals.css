@@ -136,6 +136,36 @@
     padding-inline: clamp(1.25rem, 5vw, 5rem);
   }
 
+  /* Section seam. A flat 1px border across a full-bleed dark section reads as
+     a hard cut; this fades the line out at both ends and floats a faint violet
+     bloom above it, so the join reads as one surface changing depth.
+     Deliberately ::before — .grain already owns ::after on several sections. */
+  .seam {
+    position: relative;
+  }
+  .seam::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 160px;
+    pointer-events: none;
+    background:
+      linear-gradient(
+          90deg,
+          transparent,
+          var(--color-ink-600) 18%,
+          var(--color-ink-600) 82%,
+          transparent
+        )
+        top / 100% 1px no-repeat,
+      radial-gradient(
+        58% 100% at 50% 0%,
+        color-mix(in oklab, var(--color-violet-600) 11%, transparent),
+        transparent 72%
+      );
+  }
+
   /* Grain sits above surfaces, below content — kills gradient banding on black. */
   .grain::after {
     content: "";

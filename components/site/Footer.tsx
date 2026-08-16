@@ -34,10 +34,7 @@ export default function Footer() {
             <p className="eyebrow mt-8">{FOOTER.location}</p>
           </div>
 
-          <nav
-            aria-label="Footer"
-            className="grid gap-10 sm:grid-cols-3"
-          >
+          <nav aria-label="Footer" className="grid gap-10 sm:grid-cols-3">
             {FOOTER.columns.map((column) => (
               <div key={column.title}>
                 <h2 className="eyebrow">{column.title}</h2>

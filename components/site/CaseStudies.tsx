@@ -34,7 +34,10 @@ function Panel({ study, index }: { study: Study; index: number }) {
             {study.summary}
           </p>
 
-          <dl className="mt-8 space-y-5 border-l border-ink-700 pl-5" data-panel-item>
+          <dl
+            className="mt-8 space-y-5 border-l border-ink-700 pl-5"
+            data-panel-item
+          >
             {(
               [
                 ["Problem", study.problem],
@@ -159,7 +162,7 @@ export default function CaseStudies() {
     <section
       ref={scope}
       id="work"
-      className="relative overflow-hidden border-t border-ink-800 bg-ink-950 lg:h-screen"
+      className="relative overflow-hidden seam bg-ink-950 lg:h-screen"
     >
       {/* Pinned above the rail on lg, so it condenses to a single line —
           a full-size heading would eat the panel's vertical budget. */}

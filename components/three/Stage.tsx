@@ -1,4 +1,5 @@
 import { Canvas, type CanvasProps } from "@react-three/fiber";
+import * as THREE from "three";
 import { useRef, type ReactNode } from "react";
 import { useOnScreen } from "@/hooks/utils/useOnScreen";
 import { useDeviceTier, useReducedMotion } from "@/lib/motion";
@@ -42,7 +43,13 @@ export default function Stage({
           gl={{
             antialias: false,
             alpha: true,
-            powerPreference: "high-performance"
+            powerPreference: "high-performance",
+            // Three's colour management is on by default; pair it with a tone
+            // map so HDR emissive values roll off instead of clipping to white.
+            // Verified against three 0.185.
+            toneMapping: THREE.ACESFilmicToneMapping,
+            toneMappingExposure: 1.05,
+            outputColorSpace: THREE.SRGBColorSpace
           }}
           {...props}
         >

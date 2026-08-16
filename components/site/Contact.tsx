@@ -44,11 +44,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section
-      ref={scope}
-      id="contact"
-      className="relative border-t border-ink-800 bg-ink-950"
-    >
+    <section ref={scope} id="contact" className="relative seam bg-ink-950">
       <div className="relative flex min-h-screen items-center overflow-hidden py-28">
         <div className="pointer-events-none absolute inset-0">
           <HeroCanvas dispersion={dispersion} />

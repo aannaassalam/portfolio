@@ -1,5 +1,6 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+import { useScrollEnergy } from "@/lib/motion";
 import * as THREE from "three";
 import PointField from "./PointField";
 import type { FormationName } from "@/lib/three/formations";
@@ -12,6 +13,7 @@ interface ServiceSceneProps {
 
 export default function ServiceScene({ formation, tier }: ServiceSceneProps) {
   const group = useRef<THREE.Group>(null);
+  const energy = useScrollEnergy();
 
   useFrame((state, delta) => {
     if (!group.current) return;
@@ -36,6 +38,7 @@ export default function ServiceScene({ formation, tier }: ServiceSceneProps) {
           lambda={2.1}
           opacity={0.85}
           seed={4242}
+          energy={energy}
         />
       </group>
     </>
