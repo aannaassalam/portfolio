@@ -177,17 +177,36 @@
   }
 }
 
-/* Reveal primitives: authored as CSS so a no-JS / reduced-motion visitor
-   never sees a blank page waiting on GSAP. `data-reveal` fades up on entry;
-   `data-scrub-hidden` is for copy a scrubbed timeline owns outright. Both are
-   forced visible below when motion is off — nothing may depend on GSAP to
-   become readable. */
-[data-reveal],
-[data-scrub-hidden] {
+/* Reveal primitives.
+   Every rule here is gated on BOTH `.js` and prefers-reduced-motion, and that
+   double gate is load-bearing:
+
+   - `.js` is set by a blocking inline script in _document, so it is present
+     before first paint but never present if scripting is off or the bundle
+     fails. Hiding unconditionally would leave those visitors staring at a
+     blank page forever, waiting on a GSAP that is never going to run.
+   - The motion query means a reduced-motion visitor gets the finished state
+     immediately, with nothing to un-hide.
+
+   The hero copy is pre-hidden here rather than by gsap.from() alone: the
+   markup is server-rendered, so without this it paints fully visible and then
+   snaps away the moment hydration lands. */
+:root.js [data-reveal],
+:root.js [data-scrub-hidden] {
   opacity: 0;
 }
-[data-reveal] {
+:root.js [data-reveal] {
   transform: translateY(1.25rem);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root.js [data-hero-line] > span {
+    transform: translateY(118%);
+  }
+  :root.js [data-hero-fade] {
+    opacity: 0;
+    transform: translateY(24px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -200,7 +219,9 @@
     scroll-behavior: auto !important;
   }
   [data-reveal],
-  [data-scrub-hidden] {
+  [data-scrub-hidden],
+  [data-hero-line] > span,
+  [data-hero-fade] {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;

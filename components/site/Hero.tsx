@@ -19,20 +19,31 @@ export default function Hero() {
   const dispersion = useRef(0);
 
   const act = useGsapScope<HTMLDivElement>(({ scope }) => {
+    // fromTo, not from: the start state is already set in CSS, so `from()`
+    // would read the CSS-hidden values as its destination and animate to
+    // nothing. Stating both ends keeps GSAP and the stylesheet in agreement.
+    // The delay is small on purpose — it is dead time the visitor spends
+    // looking at a hidden headline.
     const intro = gsap.timeline({
       defaults: { ease: "expo.out" },
-      delay: 0.25
+      delay: 0.12
     });
 
     intro
-      .from(scope.querySelectorAll("[data-hero-line] > span"), {
-        yPercent: 118,
-        duration: 1.5,
-        stagger: 0.12
-      })
-      .from(
+      .fromTo(
+        scope.querySelectorAll("[data-hero-line] > span"),
+        // `y: 0` is not redundant. GSAP treats yPercent as a SEPARATE
+        // transform component: it parses the CSS pre-hide (translateY(118%))
+        // into its base `y` and then adds yPercent on top, so `yPercent: 0`
+        // alone lands back on the CSS offset instead of at zero. Declaring
+        // `y` zeroes that base so yPercent is the only thing driving it.
+        { yPercent: 118, y: 0 },
+        { yPercent: 0, y: 0, duration: 1.5, stagger: 0.12 }
+      )
+      .fromTo(
         scope.querySelectorAll("[data-hero-fade]"),
-        { opacity: 0, y: 24, duration: 1.2, stagger: 0.1 },
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 1.2, stagger: 0.1 },
         "-=1.05"
       );
 
