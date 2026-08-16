@@ -178,7 +178,7 @@ export default function Philosophy() {
               <li
                 key={symptom}
                 data-symptom
-                className="absolute font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-mist"
+                className="absolute font-mono text-xs uppercase tracking-[0.18em] text-mist"
                 style={{
                   left: `${8 + ((i * 37) % 74)}%`,
                   top: `${10 + ((i * 23) % 76)}%`
@@ -192,7 +192,7 @@ export default function Philosophy() {
           <p
             data-resolved
             data-scrub-hidden
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-full border border-violet-600/40 bg-ink-900/80 px-6 py-3 font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-violet-300 backdrop-blur-sm"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-full border border-violet-600/40 bg-ink-900/80 px-6 py-3 font-mono text-xs uppercase tracking-[0.22em] text-violet-300 backdrop-blur-sm"
           >
             {PHILOSOPHY.resolvedLabel}
           </p>

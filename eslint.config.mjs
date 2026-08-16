@@ -6,7 +6,8 @@ import nextTypescript from "eslint-config-next/typescript";
 
 export default defineConfig([
   {
-    ignores: [".next/**", "node_modules/**", "ui/RichTextEditor/**"]
+    // brand-source/ is Node build tooling for the logo assets, not app code.
+    ignores: [".next/**", "node_modules/**", "ui/RichTextEditor/**", "brand-source/**"]
   },
   ...nextCoreWebVitals,
   ...nextTypescript,

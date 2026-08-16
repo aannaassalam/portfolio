@@ -29,7 +29,7 @@ export default function Cta({
     <Tag
       href={href}
       className={cx(
-        "group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-6 py-3.5",
+        "group relative inline-flex min-h-11 items-center gap-3 overflow-hidden rounded-full px-6 py-3.5",
         "text-sm font-medium tracking-tight transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
         variant === "primary"
           ? "bg-violet-600 text-white hover:bg-violet-500"

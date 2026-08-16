@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CONTACT, NAV_LINKS } from "@/json/site/content";
 import { cx } from "@/lib/utils";
 import Cta from "@/ui/Cta/Cta";
@@ -8,6 +8,7 @@ const SECTION_IDS = NAV_LINKS.map((link) => link.href.slice(1));
 
 export default function Nav() {
   const [condensed, setCondensed] = useState(false);
+  const progress = useRef<HTMLSpanElement>(null);
   const [active, setActive] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -16,6 +17,35 @@ export default function Nav() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    // The page runs to ~27 viewports; without this there is no sense of how
+    // much is left. Written straight to the transform on a rAF, so it never
+    // re-renders React while scrolling.
+    let frame = 0;
+    const paint = () => {
+      frame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+      if (progress.current) {
+        // Plain width, not a scale transform: Tailwind's scale-x-* utility
+        // composes transform from CSS variables and fought the inline value.
+        progress.current.style.width = `${(ratio * 100).toFixed(3)}%`;
+      }
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(paint);
+    };
+
+    paint();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
   }, []);
 
   useEffect(() => {
@@ -45,6 +75,14 @@ export default function Nav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
+      {/* Reading progress across the full viewport width. The page runs to
+          ~27 viewports, so this is the only cue for how much is left. */}
+      <span
+        ref={progress}
+        data-scroll-progress
+        aria-hidden
+        className="pointer-events-none absolute left-0 top-0 h-0.5 w-0 bg-linear-to-r from-violet-600 via-violet-400 to-violet-300"
+      />
       <nav
         aria-label="Primary"
         className={cx(
@@ -65,7 +103,7 @@ export default function Nav() {
                   href={link.href}
                   aria-current={isActive ? "true" : undefined}
                   className={cx(
-                    "relative rounded-full px-4 py-2 text-sm transition-colors duration-300",
+                    "relative flex min-h-11 items-center rounded-full px-4 text-sm transition-colors duration-300",
                     isActive ? "text-chalk" : "text-mist hover:text-chalk"
                   )}
                 >

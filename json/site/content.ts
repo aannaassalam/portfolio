@@ -5,8 +5,9 @@
  */
 
 export const BRAND = {
-  name: "Axiom",
-  mark: "AXIOM",
+  name: "Synk Innovations",
+  /** Short form used in the lockup and page titles. */
+  short: "Synk",
   tagline: "Designed for today. Engineered for what comes next."
 };
 
@@ -361,7 +362,7 @@ export const CONTACT = {
   eyebrow: "Let's build it",
   headline: "Have something worth building?",
   lede: "Let's turn the idea into something real.",
-  primaryCta: { label: "Start a conversation", href: "mailto:hello@axiom.dev" },
+  primaryCta: { label: "Start a conversation", href: "mailto:hello@synkinnovations.com" },
   secondaryCta: { label: "View our capabilities", href: "#services" },
   responseNote: "We reply to every enquiry within two business days."
 };
@@ -393,7 +394,7 @@ export const FOOTER = {
       links: [
         { label: "LinkedIn", href: "https://www.linkedin.com" },
         { label: "GitHub", href: "https://github.com" },
-        { label: "hello@axiom.dev", href: "mailto:hello@axiom.dev" }
+        { label: "hello@synkinnovations.com", href: "mailto:hello@synkinnovations.com" }
       ]
     }
   ],

@@ -49,7 +49,7 @@ export default function Footer() {
                         {...(link.href.startsWith("http")
                           ? { target: "_blank", rel: "noreferrer" }
                           : {})}
-                        className="text-sm text-mist transition-colors duration-300 hover:text-violet-300"
+                        className="inline-flex min-h-6 items-center text-sm text-mist transition-colors duration-300 hover:text-violet-300"
                       >
                         {link.label}
                       </a>
@@ -67,7 +67,7 @@ export default function Footer() {
           </p>
           <a
             href="#top"
-            className="font-mono text-[0.6875rem] uppercase tracking-[0.2em] text-slate-muted transition-colors duration-300 hover:text-violet-300"
+            className="inline-flex min-h-6 items-center font-mono text-xs uppercase tracking-[0.2em] text-slate-muted transition-colors duration-300 hover:text-violet-300"
           >
             Back to top ↑
           </a>

@@ -13,7 +13,6 @@ import {
   QueryClientProvider,
   QueryKey
 } from "@tanstack/react-query";
-import { SessionProvider } from "next-auth/react";
 import { AxiosResponse } from "axios";
 
 interface SuccessData {

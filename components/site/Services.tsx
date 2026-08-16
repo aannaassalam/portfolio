@@ -23,7 +23,7 @@ function ServiceBody({ service }: { service: (typeof SERVICES)[number] }) {
         {service.capabilities.map((capability) => (
           <li
             key={capability}
-            className="rounded-full border border-ink-600 px-3 py-1.5 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-slate-muted"
+            className="rounded-full border border-ink-600 px-3 py-1.5 font-mono text-xs uppercase tracking-[0.14em] text-slate-muted"
           >
             {capability}
           </li>

@@ -91,10 +91,10 @@ export default function Architecture() {
         <ul className="shell absolute inset-x-0 bottom-10 flex flex-wrap gap-x-6 gap-y-2">
           {ARCHITECTURE.layers.map((layer) => (
             <li key={layer.name} data-layer className="flex items-baseline gap-2">
-              <span className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-violet-300">
+              <span className="font-mono text-xs uppercase tracking-[0.18em] text-violet-300">
                 {layer.name}
               </span>
-              <span className="hidden text-[0.6875rem] text-slate-muted lg:inline">
+              <span className="hidden text-xs text-slate-muted lg:inline">
                 {layer.note}
               </span>
             </li>

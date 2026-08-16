@@ -69,7 +69,7 @@ function Panel({ study, index }: { study: Study; index: number }) {
             {study.stack.map((tech) => (
               <li
                 key={tech}
-                className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-slate-muted"
+                className="font-mono text-xs uppercase tracking-[0.14em] text-slate-muted"
               >
                 {tech}
               </li>

@@ -96,7 +96,7 @@ export default function TechStack() {
                   onBlur={() => setFocused(null)}
                   aria-describedby={`tech-note-${index}`}
                   className={cx(
-                    "flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs transition-all duration-500 ease-out-expo md:px-4 md:py-2 md:text-sm",
+                    "flex min-h-11 items-center gap-2 rounded-full border px-4 text-xs transition-all duration-500 ease-out-expo md:px-5 md:text-sm",
                     isLit(index)
                       ? "border-violet-600/60 bg-ink-850/90 text-chalk"
                       : "border-ink-600 bg-ink-850/60 text-slate-muted",
@@ -115,7 +115,7 @@ export default function TechStack() {
                 <span
                   id={`tech-note-${index}`}
                   className={cx(
-                    "pointer-events-none absolute left-1/2 top-full mt-2 w-max -translate-x-1/2 font-mono text-[0.625rem] uppercase tracking-[0.16em] text-violet-300 transition-opacity duration-300",
+                    "pointer-events-none absolute left-1/2 top-full mt-2 w-max -translate-x-1/2 font-mono text-xs uppercase tracking-[0.16em] text-violet-300 transition-opacity duration-300",
                     focused === index ? "opacity-100" : "opacity-0"
                   )}
                 >

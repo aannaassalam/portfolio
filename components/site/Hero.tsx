@@ -140,7 +140,11 @@ export default function Hero() {
           >
             {HERO.disciplines.map((item, i) => (
               <li key={item} className="eyebrow flex items-center gap-3">
-                {i > 0 && <span className="text-ink-600">·</span>}
+                {i > 0 && (
+                  <span aria-hidden className="text-ink-600">
+                    ·
+                  </span>
+                )}
                 {item}
               </li>
             ))}

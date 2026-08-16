@@ -25,7 +25,7 @@ export default function Principles() {
           {PRINCIPLES.map((principle) => (
             <li key={principle.label} data-reveal>
               <GlowCard className="h-full border-0">
-                <h3 className="font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-violet-300">
+                <h3 className="font-mono text-xs uppercase tracking-[0.22em] text-violet-300">
                   {principle.label}
                 </h3>
                 <p className="mt-4 text-sm leading-relaxed text-mist">
