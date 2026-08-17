@@ -341,13 +341,13 @@ The supporting primitive is `revealChildren`: `[data-reveal]` elements rise 0.75
 
 **The double gate is load-bearing and must not be simplified.** Nothing is hidden unless something is guaranteed to un-hide it. **Five attribute families are animated from JS, and every one of them is gated in both directions:**
 
-| Attribute | Pre-paint state under `:root.js` | Reduced-motion override |
-| --- | --- | --- |
-| `[data-reveal]` | `opacity: 0`, `translateY(0.75rem)` | opacity 1, no transform |
-| `[data-arrival]` | `opacity: 0`, `translateY(0.75rem)` | opacity 1, no transform |
-| `[data-callout]` | `opacity: 0` | opacity 1, no transform |
-| `[data-letter] > span` | `translateY(108%)` | opacity 1, no transform |
-| `[data-draw]` | dash offset held at `--len` | `stroke-dashoffset: 0` |
+| Attribute              | Pre-paint state under `:root.js`    | Reduced-motion override |
+| ---------------------- | ----------------------------------- | ----------------------- |
+| `[data-reveal]`        | `opacity: 0`, `translateY(0.75rem)` | opacity 1, no transform |
+| `[data-arrival]`       | `opacity: 0`, `translateY(0.75rem)` | opacity 1, no transform |
+| `[data-callout]`       | `opacity: 0`                        | opacity 1, no transform |
+| `[data-letter] > span` | `translateY(108%)`                  | opacity 1, no transform |
+| `[data-draw]`          | dash offset held at `--len`         | `stroke-dashoffset: 0`  |
 
 1. **The `:root.js` prefix.** The `js` class is added by a **blocking inline script in `pages/_document.tsx`**, so it lands before first paint and is _absent_ when scripting is unavailable. Without it, a no-JS visitor gets a permanently blank page. Never move this flag into React and never drop the prefix from a hiding rule.
 2. **The reduced-motion block.** It un-hides all five families, handing a reduced-motion visitor the _finished_ state with nothing left to un-hide. `useGsapScope` skips setup entirely under `prefers-reduced-motion`, so if a family is hidden by CSS and absent from this block, it stays hidden forever.
