@@ -1,44 +1,43 @@
-import { BRAND, FOOTER } from "@/json/site/content";
-import { gsap, useGsapScope } from "@/lib/motion";
+import { BRAND, FOOTER, SET } from "@/json/site/content";
 import Wordmark from "./Wordmark";
 
+/**
+ * The set's back page: the drawing register. A real set closes with the list of
+ * every sheet in it and the revision each one is at, which is exactly what a
+ * footer nav is if you let it be one.
+ */
 export default function Footer() {
-  const scope = useGsapScope<HTMLElement>(({ scope }) => {
-    gsap.fromTo(
-      scope.querySelector("[data-footer-line]"),
-      { scaleX: 0 },
-      {
-        scaleX: 1,
-        duration: 1.8,
-        ease: "expo.out",
-        scrollTrigger: { trigger: scope, start: "top 90%" }
-      }
-    );
-  }, []);
-
   return (
-    <footer ref={scope} className="relative bg-ink-950 pb-12 pt-20">
-      <span
-        aria-hidden
-        data-footer-line
-        className="absolute inset-x-0 top-0 h-px origin-left bg-[linear-gradient(90deg,transparent,#7C3AED_35%,#A855F7_50%,#7C3AED_65%,transparent)]"
-      />
-
-      <div className="shell">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
+    <footer className="border-t border-ink-700 bg-print-100">
+      <div className="shell py-14">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr]">
           <div>
             <Wordmark />
-            <p className="mt-6 max-w-xs text-sm leading-relaxed text-slate-muted">
-              {BRAND.tagline}
-            </p>
-            <p className="eyebrow mt-8">{FOOTER.location}</p>
+            <p className="note mt-5 max-w-[28ch] note-fine">{BRAND.tagline}</p>
+            <dl className="mt-8 grid max-w-xs grid-cols-2 gap-y-3">
+              {(
+                [
+                  ["Set", `${SET.sheetCount} sheets`],
+                  ["Revision", SET.revision],
+                  ["Status", SET.status],
+                  ["Office", FOOTER.location.split(" · ")[0]]
+                ] as const
+              ).map(([label, value]) => (
+                <div key={label}>
+                  <dt className="field">{label}</dt>
+                  <dd className="mt-1 font-measure text-xs text-ink-700">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
           <nav aria-label="Footer" className="grid gap-10 sm:grid-cols-3">
             {FOOTER.columns.map((column) => (
               <div key={column.title}>
-                <h2 className="eyebrow">{column.title}</h2>
-                <ul className="mt-5 space-y-3">
+                <h2 className="field">{column.title}</h2>
+                <ul className="mt-4 space-y-2.5">
                   {column.links.map((link) => (
                     <li key={link.label}>
                       <a
@@ -46,7 +45,7 @@ export default function Footer() {
                         {...(link.href.startsWith("http")
                           ? { target: "_blank", rel: "noreferrer" }
                           : {})}
-                        className="inline-flex min-h-6 items-center text-sm text-mist transition-colors duration-300 hover:text-violet-300"
+                        className="inline-flex min-h-6 items-center font-measure text-xs text-ink-500 transition-colors duration-300 hover:text-ink-900"
                       >
                         {link.label}
                       </a>
@@ -58,15 +57,15 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-ink-800 pt-8">
-          <p className="text-xs text-slate-muted">
-            © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
+        <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-ink-700/30 pt-6">
+          <p className="font-measure text-[0.6875rem] text-ink-300">
+            © {new Date().getFullYear()} {BRAND.name}. {FOOTER.location}
           </p>
           <a
             href="#top"
-            className="inline-flex min-h-6 items-center font-mono text-xs uppercase tracking-[0.2em] text-slate-muted transition-colors duration-300 hover:text-violet-300"
+            className="inline-flex min-h-6 items-center font-measure text-[0.6875rem] tracking-[0.14em] text-ink-500 transition-colors duration-300 hover:text-ink-900"
           >
-            Back to top ↑
+            SHEET 01 ↑
           </a>
         </div>
       </div>

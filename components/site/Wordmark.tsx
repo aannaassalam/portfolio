@@ -28,7 +28,10 @@ export default function Wordmark({
   return (
     <Link
       href="#top"
-      className={cx("inline-flex min-h-11 items-center text-chalk", className)}
+      className={cx(
+        "inline-flex min-h-11 items-center text-ink-700",
+        className
+      )}
       aria-label={`${BRAND.name} — home`}
     >
       <svg
@@ -39,8 +42,12 @@ export default function Wordmark({
       >
         {/* Master symbol is authored centred on a 1000-unit canvas, so it is
             scaled about its own centre and then placed. */}
+        {/* Ink, not violet: BRAND.md restricts the violet mark to grounds dark
+            enough to carry it, and this ground is a whiteprint. The brand
+            colour is not absent from the page — it is the ink everything else
+            is drawn in. */}
         <g
-          className="fill-violet-400"
+          className="fill-ink-700"
           fillRule="nonzero"
           transform={
             `translate(${LOCKUP.markSize / 2} ${LOCKUP.markSize / 2}) ` +

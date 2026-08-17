@@ -170,9 +170,13 @@ def letterhead():
 FILES = {
     "synk-favicon.svg": favicon(),
     "synk-letterhead-a4.svg": letterhead(),
-    "synk-logo-dark.svg": symbol_only(WHITE),
-    "synk-logo-light.svg": symbol_only(BLACK),
-    "synk-logo-violet.svg": symbol_only(VIOLET),
+    # The primary lockup is mark + SYNK: horizontal() without the descriptor.
+    # These three were mapped to symbol_only(), which made them byte-identical
+    # to the synk-mark-* files — so the file BRAND.md calls "Primary. Mark +
+    # SYNK" shipped with no logotype in it at all.
+    "synk-logo-dark.svg": horizontal(WHITE, False),
+    "synk-logo-light.svg": horizontal(BLACK, False),
+    "synk-logo-violet.svg": horizontal(VIOLET, False),
     "synk-logo-full-dark.svg": horizontal(WHITE, True),
     "synk-logo-full-light.svg": horizontal(BLACK, True),
     "synk-logo-stacked-dark.svg": stacked(WHITE),

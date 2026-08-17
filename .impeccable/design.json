@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-17T12:00:00.000Z",
+  "title": "Design System: Synk Innovations — Revision Set",
+  "extensions": {
+    "colorMeta": {
+      "print-050": {
+        "role": "neutral",
+        "displayName": "Palest Ground",
+        "canonical": "oklch(0.9409 0.0109 297.62)",
+        "tonalRamp": [
+          "oklch(0.15 0.0109 297.62)",
+          "oklch(0.264 0.0109 297.62)",
+          "oklch(0.379 0.0109 297.62)",
+          "oklch(0.493 0.0109 297.62)",
+          "oklch(0.607 0.0109 297.62)",
+          "oklch(0.721 0.0109 297.62)",
+          "oklch(0.836 0.0109 297.62)",
+          "oklch(0.95 0.0109 297.62)"
+        ],
+        "notes": "Declared in @theme but effectively unused in the shipped sheets."
+      },
+      "print-100": {
+        "role": "neutral",
+        "displayName": "Lifted Ground",
+        "canonical": "oklch(0.9098 0.0178 296.61)",
+        "tonalRamp": [
+          "oklch(0.15 0.0178 296.61)",
+          "oklch(0.264 0.0178 296.61)",
+          "oklch(0.379 0.0178 296.61)",
+          "oklch(0.493 0.0178 296.61)",
+          "oklch(0.607 0.0178 296.61)",
+          "oklch(0.721 0.0178 296.61)",
+          "oklch(0.836 0.0178 296.61)",
+          "oklch(0.95 0.0178 296.61)"
+        ],
+        "notes": "The second sheet ground. Sheets 04, 06 and 09 print on it, plus the footer and the mobile index panel. A printing rhythm, not a hierarchy signal."
+      },
+      "print-200": {
+        "role": "neutral",
+        "displayName": "Standard Ground",
+        "canonical": "oklch(0.8717 0.0222 297.37)",
+        "tonalRamp": [
+          "oklch(0.15 0.0222 297.37)",
+          "oklch(0.264 0.0222 297.37)",
+          "oklch(0.379 0.0222 297.37)",
+          "oklch(0.493 0.0222 297.37)",
+          "oklch(0.607 0.0222 297.37)",
+          "oklch(0.721 0.0222 297.37)",
+          "oklch(0.836 0.0222 297.37)",
+          "oklch(0.95 0.0222 297.37)"
+        ],
+        "notes": "The developed print itself, and the html/body background. Seven of ten sheets print on it. Warm neutral would be paper; this is developed."
+      },
+      "print-300": {
+        "role": "neutral",
+        "displayName": "Rule Grey",
+        "canonical": "oklch(0.8124 0.031 296.11)",
+        "tonalRamp": [
+          "oklch(0.15 0.031 296.11)",
+          "oklch(0.264 0.031 296.11)",
+          "oklch(0.379 0.031 296.11)",
+          "oklch(0.493 0.031 296.11)",
+          "oklch(0.607 0.031 296.11)",
+          "oklch(0.721 0.031 296.11)",
+          "oklch(0.836 0.031 296.11)",
+          "oklch(0.95 0.031 296.11)"
+        ],
+        "notes": "Global default border-color for every element, and the scrollbar track rule."
+      },
+      "print-400": {
+        "role": "neutral",
+        "displayName": "Deep Ground",
+        "canonical": "oklch(0.729 0.0377 296.02)",
+        "tonalRamp": [
+          "oklch(0.15 0.0377 296.02)",
+          "oklch(0.264 0.0377 296.02)",
+          "oklch(0.379 0.0377 296.02)",
+          "oklch(0.493 0.0377 296.02)",
+          "oklch(0.607 0.0377 296.02)",
+          "oklch(0.721 0.0377 296.02)",
+          "oklch(0.836 0.0377 296.02)",
+          "oklch(0.95 0.0377 296.02)"
+        ],
+        "notes": "Declared in @theme but effectively unused in the shipped sheets."
+      },
+      "ink-900": {
+        "role": "neutral",
+        "displayName": "Near-Black",
+        "canonical": "oklch(0.2001 0.0139 291.64)",
+        "tonalRamp": [
+          "oklch(0.15 0.0139 291.64)",
+          "oklch(0.264 0.0139 291.64)",
+          "oklch(0.379 0.0139 291.64)",
+          "oklch(0.493 0.0139 291.64)",
+          "oklch(0.607 0.0139 291.64)",
+          "oklch(0.721 0.0139 291.64)",
+          "oklch(0.836 0.0139 291.64)",
+          "oklch(0.95 0.0139 291.64)"
+        ],
+        "notes": "Structural only: sheet-strip titles, field values, hairline rules, the mobile index backdrop at 45%. NOT a text ink for running prose. 12.24:1 on the standard ground."
+      },
+      "ink-700": {
+        "role": "primary",
+        "displayName": "Diazo Ink",
+        "canonical": "oklch(0.3287 0.1378 281.55)",
+        "tonalRamp": [
+          "oklch(0.15 0.1378 281.55)",
+          "oklch(0.264 0.1378 281.55)",
+          "oklch(0.379 0.1378 281.55)",
+          "oklch(0.493 0.1378 281.55)",
+          "oklch(0.607 0.1378 281.55)",
+          "oklch(0.721 0.1378 281.55)",
+          "oklch(0.836 0.1378 281.55)",
+          "oklch(0.95 0.1378 281.55)"
+        ],
+        "notes": "THE printing ink. Body text, sheet titles, drawn linework, sheet borders, table rules, the brand mark. 8.71:1 on the standard ground. Everything printed on this page is this colour."
+      },
+      "ink-500": {
+        "role": "primary",
+        "displayName": "Half-Weight Ink",
+        "canonical": "oklch(0.4324 0.1539 283.88)",
+        "tonalRamp": [
+          "oklch(0.15 0.1539 283.88)",
+          "oklch(0.264 0.1539 283.88)",
+          "oklch(0.379 0.1539 283.88)",
+          "oklch(0.493 0.1539 283.88)",
+          "oklch(0.607 0.1539 283.88)",
+          "oklch(0.721 0.1539 283.88)",
+          "oklch(0.836 0.1539 283.88)",
+          "oklch(0.95 0.1539 283.88)"
+        ],
+        "notes": "The second line weight a set prints. Every engraved field label, registration marks, revision-column notes. 5.75:1 on the standard ground."
+      },
+      "ink-300": {
+        "role": "primary",
+        "displayName": "Light-Weight Ink",
+        "canonical": "oklch(0.4785 0.1132 287.04)",
+        "tonalRamp": [
+          "oklch(0.15 0.1132 287.04)",
+          "oklch(0.264 0.1132 287.04)",
+          "oklch(0.379 0.1132 287.04)",
+          "oklch(0.493 0.1132 287.04)",
+          "oklch(0.607 0.1132 287.04)",
+          "oklch(0.721 0.1132 287.04)",
+          "oklch(0.836 0.1132 287.04)",
+          "oklch(0.95 0.1132 287.04)"
+        ],
+        "notes": "CONTRAST-SOLVED, NOT AN AESTHETIC PICK. Darkened from #7d73b8, which measured 2.83:1 and failed AA for small text. Now 4.62:1 on print-200 and 5.21:1 on print-100. Do not lighten."
+      },
+      "plate": {
+        "role": "secondary",
+        "displayName": "Plate Violet",
+        "canonical": "oklch(0.451 0.2123 283.2)",
+        "tonalRamp": [
+          "oklch(0.15 0.2123 283.2)",
+          "oklch(0.264 0.2123 283.2)",
+          "oklch(0.379 0.2123 283.2)",
+          "oklch(0.493 0.2123 283.2)",
+          "oklch(0.607 0.2123 283.2)",
+          "oklch(0.721 0.2123 283.2)",
+          "oklch(0.836 0.2123 283.2)",
+          "oklch(0.95 0.2123 283.2)"
+        ],
+        "notes": "Solid fields with knocked-out lettering: title block, ISSUE stamp, sheet numbers, the one underlined nav link. 5.52:1 as a link on ground; carries knock lettering at 7.23:1. The drafted #5B3FD9 was rejected because it measures only 4.49:1; the direction contract in pages/_document.tsx now names this shipped value and records that rejection with a do-not-restore instruction."
+      },
+      "plate-deep": {
+        "role": "secondary",
+        "displayName": "Plate Deep",
+        "canonical": "oklch(0.359 0.1672 283.3)",
+        "tonalRamp": [
+          "oklch(0.15 0.1672 283.3)",
+          "oklch(0.264 0.1672 283.3)",
+          "oklch(0.379 0.1672 283.3)",
+          "oklch(0.493 0.1672 283.3)",
+          "oklch(0.607 0.1672 283.3)",
+          "oklch(0.721 0.1672 283.3)",
+          "oklch(0.836 0.1672 283.3)",
+          "oklch(0.95 0.1672 283.3)"
+        ],
+        "notes": "The ruled lines inside a title block's field grid, at 50% so they read as printed on the plate. Also the plate link's hover. 7.90:1 on ground."
+      },
+      "knock": {
+        "role": "secondary",
+        "displayName": "Knock",
+        "canonical": "oklch(0.9587 0.0095 299.24)",
+        "tonalRamp": [
+          "oklch(0.15 0.0095 299.24)",
+          "oklch(0.264 0.0095 299.24)",
+          "oklch(0.379 0.0095 299.24)",
+          "oklch(0.493 0.0095 299.24)",
+          "oklch(0.607 0.0095 299.24)",
+          "oklch(0.721 0.0095 299.24)",
+          "oklch(0.836 0.0095 299.24)",
+          "oklch(0.95 0.0095 299.24)"
+        ],
+        "notes": "Knocked-out lettering — the paper showing through a solid plate. Never a background. 7.23:1 on plate, 10.36:1 on plate-deep."
+      },
+      "redline": {
+        "role": "tertiary",
+        "displayName": "Red Pencil",
+        "canonical": "oklch(0.4839 0.1657 32.03)",
+        "tonalRamp": [
+          "oklch(0.15 0.1657 32.03)",
+          "oklch(0.264 0.1657 32.03)",
+          "oklch(0.379 0.1657 32.03)",
+          "oklch(0.493 0.1657 32.03)",
+          "oklch(0.607 0.1657 32.03)",
+          "oklch(0.721 0.1657 32.03)",
+          "oklch(0.836 0.1657 32.03)",
+          "oklch(0.95 0.1657 32.03)"
+        ],
+        "notes": "CONTRAST-SOLVED, NOT AN AESTHETIC PICK. Darkened from #c4331c, which measured 3.69:1 — large-text only. Now 4.71:1 on print-200 and 5.32:1 on print-100. Reserved for corrections, current revision, held data and focus rings. Do not lighten."
+      },
+      "redline-soft": {
+        "role": "tertiary",
+        "displayName": "Soft Red Pencil",
+        "canonical": "oklch(0.6176 0.1343 32.51)",
+        "tonalRamp": [
+          "oklch(0.15 0.1343 32.51)",
+          "oklch(0.264 0.1343 32.51)",
+          "oklch(0.379 0.1343 32.51)",
+          "oklch(0.493 0.1343 32.51)",
+          "oklch(0.607 0.1343 32.51)",
+          "oklch(0.721 0.1343 32.51)",
+          "oklch(0.836 0.1343 32.51)",
+          "oklch(0.95 0.1343 32.51)"
+        ],
+        "notes": "2.63:1 on ground. Large-graphic use only, and currently near-unused. Not safe for text."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Lettering",
+        "purpose": "Lettered into the drawing area of sheet 01 only, split into per-line masked spans so it rises into frame. Sheet 10's closing headline is a near-sibling at clamp(2rem, 5vw, 4.25rem). Archivo Narrow, exposed as --font-chrome."
+      },
+      "headline": {
+        "displayName": "Sheet Heading",
+        "purpose": "The workhorse. Eight sheets use this exact clamp, capped at 20-22ch. Keep it identical across sheets — a set whose sheet headings differ in size reads as loose leaves."
+      },
+      "title": {
+        "displayName": "Strip Title",
+        "purpose": "The sheet title in the printed strip, in near-black, 0.875rem rising to 1rem at sm. Also revision-column item names (0.75rem) and mobile index entries (1rem)."
+      },
+      "body": {
+        "displayName": "Note",
+        "purpose": "The `.note` class: running prose on a drawing, max 68ch, always beneath a field label, 14px. Colour is ink mixed 88% with the ground, so a note sits a half-step behind lettering without becoming a second hue."
+      },
+      "body-fine": {
+        "displayName": "Fine Print",
+        "purpose": "The `.note-fine` class: 13px, the fine print beneath a note and the only other note size there is. A size step layered onto `.note` — it declares no colour or measure of its own, so the two classes appear together on the same element. MUST stay declared after `.note` in styles/globals.css: same cascade layer, last declaration wins, and this one has to be the winner. It exists because sixteen call sites each carried the same text-[0.8125rem] literal."
+      },
+      "label": {
+        "displayName": "Engraved Field Label",
+        "purpose": "The `.field` class, 11px: every title-block field name and note heading, so the same kind of word always looks the same. Lekton, exposed as --font-measure. On a plate it swaps to the knocked-out variant `.field-knock`."
+      },
+      "label-sm": {
+        "displayName": "Small Engraved Label",
+        "purpose": "The `.field-sm` class, 10px: the second and last step of the label scale — revision-column metadata, the ILLUSTRATIVE stamp, the issue stamp's overline (which widens tracking to 0.2em, the one override this step takes). Inherits colour from its caller. The overline's former one-off 0.5625rem was folded up into this step rather than earning a step for a single caller. 10px is the floor of the whole system."
+      },
+      "measure": {
+        "displayName": "Typed Measurement",
+        "purpose": "Every number on the page — sheet numbers, revisions, dates, dimensions, metrics. Tabular figures are applied globally to anything carrying the measure face, which keeps the revision column from wobbling. On a real drawing the numbers are typed, not lettered."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-draw",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only named easing token. Handles the few CSS state transitions: the stamp straightening on hover, the nav rule thickening on scroll, the mobile index scrim."
+      },
+      {
+        "name": "plotter-speed",
+        "value": "900 user units / second, clamped 0.5s-2.4s",
+        "purpose": "THE system's one motion device. Every [data-draw] path is measured with getTotalLength(), its real length written to --len, then stroke-dashoffset tweened to 0 with linear easing over length/900 seconds. Measuring per-path is what stops a short leader line crawling while a long section cut snaps — every line draws at one speed, the way a plotter does. Never hand-set a draw duration."
+      },
+      {
+        "name": "reveal-children",
+        "value": "opacity 0->1, translateY 0.75rem->0, 1.1s expo.out, 0.09s stagger, ScrollTrigger start 'top 78%'",
+        "purpose": "Supporting primitive for [data-reveal] elements. Scoped through useGsapScope, which reverts every tween and ScrollTrigger on unmount and skips setup entirely under prefers-reduced-motion."
+      },
+      {
+        "name": "double-gate",
+        "value": ":root.js [data-reveal], [data-arrival], [data-callout], [data-letter] > span, [data-draw] + @media (prefers-reduced-motion: reduce) un-hiding all five",
+        "purpose": "THE MOST BREAKABLE THING IN THE SYSTEM. LOAD-BEARING, DO NOT SIMPLIFY. Five attribute families are animated from JS and every one is gated in both directions. Pre-paint under :root.js — [data-reveal] and [data-arrival]: opacity 0 + translateY(0.75rem); [data-callout]: opacity 0; [data-letter] > span: translateY(108%); [data-draw]: stroke-dashoffset held at --len. The `js` class is added by a blocking inline script in pages/_document.tsx so it lands before first paint and is absent when scripting is unavailable — without it, a no-JS visitor gets a permanently blank page. The reduced-motion block then un-hides all five, handing that visitor the finished state with nothing left to un-hide; useGsapScope skips setup entirely under prefers-reduced-motion, so a family that is hidden by CSS and missing from this block stays hidden forever. Sheet 01's hero proved it: it animated [data-arrival], [data-letter] > span and [data-callout] while the stylesheet gated only [data-reveal] and [data-draw], so its server-rendered markup painted visible and snapped away at hydration. Adding a new animated family is a two-line stylesheet change, not just a component change."
+      },
+      {
+        "name": "one-owner",
+        "value": "one property, one tween; scrubbed opacity tweens use fromTo",
+        "purpose": "A scrubbed tween captures its start value at creation time and, as the last renderer, pins the property there — so if CSS or another tween also owns that property, the scrubbed one wins and may have captured the wrong value. Sheet 02's symptom list proved it: its <li>s carried data-reveal AND data-symptom, the scrubbed [data-symptom] tween read the stylesheet's pre-reveal opacity 0, and an entire schedule went invisible on desktop. The fix is both halves — drop the second attribute so only one tween touches opacity, and use fromTo so the tween states both ends rather than reading whatever it finds. Shipped result: rendered opacity 0.55 on desktop, 1.0 on mobile."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs",
+        "value": "480px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      },
+      {
+        "name": "2xl",
+        "value": "1536px"
+      },
+      {
+        "name": "3xl",
+        "value": "1792px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Issue Stamp",
+      "kind": "button",
+      "refersTo": "stamp-issue",
+      "description": "The page's primary action, as a drawing-office issue stamp rather than a button. Rotated plate, knocked-out lettering, hairline keyline inset from the edge; presses down onto the paper on active, never lifts off it.",
+      "html": "<a class=\"ds-stamp-issue\" href=\"#contact\"><span class=\"ds-stamp-issue__keyline\" aria-hidden=\"true\"></span><span class=\"ds-stamp-issue__over\">Issued for tender</span><span class=\"ds-stamp-issue__text\">Issue enquiry</span></a>",
+      "css": ".ds-stamp-issue { position: relative; display: inline-flex; flex-direction: column; justify-content: center; min-height: 2.75rem; padding: 0.75rem 1.5rem; background: var(--color-plate, #4f31c4); color: var(--color-knock, #f2f0f7); border: none; border-radius: 0; text-decoration: none; transform: rotate(-1deg); transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-stamp-issue:hover { transform: rotate(0deg); } .ds-stamp-issue:active { transform: rotate(0deg) scale(0.98); } .ds-stamp-issue:focus-visible { outline: 2px solid var(--color-redline, #a82a15); outline-offset: 3px; } .ds-stamp-issue__keyline { pointer-events: none; position: absolute; inset: 3px; border: 1px solid color-mix(in oklab, var(--color-knock, #f2f0f7) 35%, transparent); } .ds-stamp-issue__over { position: relative; font-family: Lekton, ui-monospace, monospace; font-size: 0.625rem; line-height: 1; letter-spacing: 0.2em; text-transform: uppercase; color: color-mix(in oklab, var(--color-knock, #f2f0f7) 72%, transparent); } .ds-stamp-issue__text { position: relative; margin-top: 0.375rem; font-family: 'Archivo Narrow', ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 1rem; line-height: 0.94; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-knock, #f2f0f7); }"
+    },
+    {
+      "name": "Pending Stamp",
+      "kind": "button",
+      "refersTo": "stamp-pending",
+      "description": "The unissued outline: same geometry as the issue stamp, no ink yet. Red pencil, because red pencil marks what has not been issued.",
+      "html": "<a class=\"ds-stamp-pending\" href=\"#work\"><span class=\"ds-stamp-pending__keyline\" aria-hidden=\"true\"></span><span class=\"ds-stamp-pending__over\">Not issued</span><span class=\"ds-stamp-pending__text\">See issued sheets</span></a>",
+      "css": ".ds-stamp-pending { position: relative; display: inline-flex; flex-direction: column; justify-content: center; min-height: 2.75rem; padding: 0.75rem 1.5rem; background: transparent; border: 2px solid var(--color-redline, #a82a15); border-radius: 0; text-decoration: none; transform: rotate(-1deg); transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-stamp-pending:hover { transform: rotate(0deg); } .ds-stamp-pending:active { transform: rotate(0deg) scale(0.98); } .ds-stamp-pending:focus-visible { outline: 2px solid var(--color-redline, #a82a15); outline-offset: 3px; } .ds-stamp-pending__keyline { pointer-events: none; position: absolute; inset: 3px; border: 1px solid color-mix(in oklab, var(--color-redline, #a82a15) 45%, transparent); } .ds-stamp-pending__over { position: relative; font-family: Lekton, ui-monospace, monospace; font-size: 0.625rem; line-height: 1; letter-spacing: 0.2em; text-transform: uppercase; color: color-mix(in oklab, var(--color-redline, #a82a15) 80%, transparent); } .ds-stamp-pending__text { position: relative; margin-top: 0.375rem; font-family: 'Archivo Narrow', ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 1rem; line-height: 0.94; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-redline, #a82a15); }"
+    },
+    {
+      "name": "Title Block",
+      "kind": "custom",
+      "refersTo": "title-block",
+      "description": "A solid violet plate seated bottom-right of a sheet, exactly where every drawing standard puts one. Six fields in a fixed order that never varies per sheet, as a ruled grid whose rules are the deeper plate showing through 1px gaps.",
+      "html": "<div class=\"ds-titleblock\"><dl class=\"ds-titleblock__grid\"><div class=\"ds-titleblock__cell\"><dt class=\"ds-titleblock__label\">Project</dt><dd class=\"ds-titleblock__value\">Synk Innovations</dd></div><div class=\"ds-titleblock__cell\"><dt class=\"ds-titleblock__label\">Drawing</dt><dd class=\"ds-titleblock__value\">General arrangement</dd></div><div class=\"ds-titleblock__cell\"><dt class=\"ds-titleblock__label\">Sheet</dt><dd class=\"ds-titleblock__value\">01 of 10</dd></div><div class=\"ds-titleblock__cell\"><dt class=\"ds-titleblock__label\">Scale</dt><dd class=\"ds-titleblock__value\">1:1</dd></div><div class=\"ds-titleblock__cell\"><dt class=\"ds-titleblock__label\">Drawn</dt><dd class=\"ds-titleblock__value\">SYNK</dd></div><div class=\"ds-titleblock__cell\"><dt class=\"ds-titleblock__label\">Rev</dt><dd class=\"ds-titleblock__value\">07</dd></div></dl></div>",
+      "css": ".ds-titleblock { max-width: 26rem; background: var(--color-plate, #4f31c4); color: var(--color-knock, #f2f0f7); border-radius: 0; } .ds-titleblock__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin: 0; background: color-mix(in oklab, var(--color-plate-deep, #38228f) 50%, transparent); } .ds-titleblock__cell { background: var(--color-plate, #4f31c4); padding: 0.75rem 1rem; } .ds-titleblock__label { font-family: Lekton, ui-monospace, monospace; font-size: 0.6875rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in oklab, var(--color-knock, #f2f0f7) 72%, transparent); } .ds-titleblock__value { margin: 0.25rem 0 0; font-family: Lekton, ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.875rem; line-height: 1.25; color: var(--color-knock, #f2f0f7); }"
+    },
+    {
+      "name": "Sheet Strip",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "The set's only container, and the reason there are no cards. A full-bleed band with a 2px top rule in ink, registration crosses in the frame margin, a printed strip carrying number / title / set reference, and a gridded drawing area beneath.",
+      "html": "<section class=\"ds-sheet\"><span class=\"ds-sheet__reg ds-sheet__reg--l\" aria-hidden=\"true\"></span><span class=\"ds-sheet__reg ds-sheet__reg--r\" aria-hidden=\"true\"></span><header class=\"ds-sheet__strip\"><span class=\"ds-sheet__no\">03</span><h2 class=\"ds-sheet__title\">Schedule of works</h2><span class=\"ds-sheet__set\">Synk Innovations &middot; Rev 07</span></header><div class=\"ds-sheet__body\"><h3 class=\"ds-sheet__heading\">Six service lines, drawn as one system.</h3><p class=\"ds-sheet__note\">A note on a drawing: running prose, set narrow, always beneath a field label.</p></div></section>",
+      "css": ".ds-sheet { position: relative; border-top: 2px solid var(--color-ink-700, #2e2378); background: var(--color-print-200, #d6d2e2); border-radius: 0; padding-inline: clamp(1rem, 3vw, 2.5rem); } .ds-sheet__reg { position: absolute; top: 0.5rem; width: 0.75rem; height: 0.75rem; color: var(--color-ink-500, #4a3da0); pointer-events: none; } .ds-sheet__reg--l { left: 0.5rem; } .ds-sheet__reg--r { right: 0.5rem; } .ds-sheet__reg::before, .ds-sheet__reg::after { content: \"\"; position: absolute; background: currentColor; } .ds-sheet__reg::before { inset-inline: 0; top: 50%; height: 1px; } .ds-sheet__reg::after { inset-block: 0; left: 50%; width: 1px; } .ds-sheet__strip { display: flex; align-items: baseline; gap: 1rem; padding-block: 0.75rem; border-bottom: 1px solid color-mix(in oklab, var(--color-ink-700, #2e2378) 40%, transparent); } .ds-sheet__no { font-family: Lekton, ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-plate, #4f31c4); } .ds-sheet__title { margin: 0; font-family: 'Archivo Narrow', ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 1rem; line-height: 0.94; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-900, #16151c); } .ds-sheet__set { margin-left: auto; font-family: Lekton, ui-monospace, monospace; font-size: 0.6875rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-500, #4a3da0); } .ds-sheet__body { position: relative; padding-block: 3.5rem; background-image: linear-gradient(to right, color-mix(in oklab, var(--color-ink-700, #2e2378) 5.5%, transparent) 0 1px, transparent 1px 100%), linear-gradient(to bottom, color-mix(in oklab, var(--color-ink-700, #2e2378) 5.5%, transparent) 0 1px, transparent 1px 100%); background-size: 1.25rem 1.25rem; } .ds-sheet__heading { margin: 0; max-width: 20ch; font-family: 'Archivo Narrow', ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: clamp(1.5rem, 2.6vw, 2.5rem); line-height: 0.94; letter-spacing: -0.01em; text-transform: uppercase; color: var(--color-ink-700, #2e2378); } .ds-sheet__note { max-width: 68ch; margin: 1rem 0 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; line-height: 1.62; color: color-mix(in oklab, var(--color-ink-700, #2e2378) 88%, var(--color-print-200, #d6d2e2)); }"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field-value",
+      "description": "A title-block field: an engraved label with its value typed beneath. The page has no text inputs — the enquiry form is a held revision — so this is the field grammar any future form must adopt instead of rounded boxes.",
+      "html": "<dl class=\"ds-field-set\"><div class=\"ds-field\"><dt class=\"ds-field__label\">Sector</dt><dd class=\"ds-field__value\">Fintech</dd></div><div class=\"ds-field\"><dt class=\"ds-field__label\">Markets</dt><dd class=\"ds-field__value\">11</dd></div><div class=\"ds-field\"><dt class=\"ds-field__label\">Median search</dt><dd class=\"ds-field__value\">180ms</dd></div></dl>",
+      "css": ".ds-field-set { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin: 0; } .ds-field { min-width: 0; } .ds-field__label { font-family: Lekton, ui-monospace, monospace; font-size: 0.6875rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-500, #4a3da0); } .ds-field__value { margin: 0.375rem 0 0; font-family: Lekton, ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.875rem; line-height: 1.25; color: var(--color-ink-900, #16151c); }"
+    },
+    {
+      "name": "Held Field",
+      "kind": "custom",
+      "refersTo": "field-held",
+      "description": "A field held for data that does not exist yet. Displayed as a hatched HOLD in light-weight ink rather than omitted — the studio's real client names are not its to print, so the page shows the gap instead of filling it with an invention.",
+      "html": "<dl class=\"ds-field-held-set\"><div class=\"ds-field-held\"><dt class=\"ds-field-held__label\">Client</dt><dd class=\"ds-field-held__value\">HOLD</dd></div></dl>",
+      "css": ".ds-field-held-set { margin: 0; } .ds-field-held { min-width: 0; } .ds-field-held__label { font-family: Lekton, ui-monospace, monospace; font-size: 0.6875rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-500, #4a3da0); } .ds-field-held__value { display: inline-block; margin: 0.375rem 0 0; padding: 0.125rem 0.375rem; font-family: Lekton, ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.875rem; line-height: 1.25; letter-spacing: 0.1em; color: var(--color-ink-300, #5a5199); background-image: repeating-linear-gradient(-45deg, color-mix(in oklab, var(--color-ink-300, #5a5199) 22%, transparent) 0 2px, transparent 2px 6px); }"
+    },
+    {
+      "name": "Illustrative Stamp",
+      "kind": "chip",
+      "refersTo": "illustrative-stamp",
+      "description": "Every unsubstantiated figure wears this. Not a footnote — a stamp: bordered red pencil, rotated -1.5deg, set in the measure face at 0.625rem.",
+      "html": "<span class=\"ds-illustrative\"><span aria-hidden=\"true\">&#9651;</span> Illustrative</span>",
+      "css": ".ds-illustrative { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.125rem 0.375rem; border: 1px solid var(--color-redline, #a82a15); border-radius: 0; color: var(--color-redline, #a82a15); font-family: Lekton, ui-monospace, monospace; font-size: 0.625rem; line-height: 1; letter-spacing: 0.16em; text-transform: uppercase; transform: rotate(-1.5deg); }"
+    },
+    {
+      "name": "Set Index (navigation)",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Navigation as the set's index strip: sheet numbers and titles, not menu items. Printed on the paper at 95% ground — no blur, no shadow, no pill — with a red-pencil reading-progress rule along its bottom edge. The active entry turns its number red pencil and its title near-black.",
+      "html": "<header class=\"ds-nav\"><nav class=\"ds-nav__bar\" aria-label=\"Primary\"><span class=\"ds-nav__brand\">SYNK</span><ul class=\"ds-nav__list\"><li><a class=\"ds-nav__link\" href=\"#services\"><span class=\"ds-nav__no\">03</span><span class=\"ds-nav__label\">Services</span></a></li><li><a class=\"ds-nav__link is-active\" href=\"#work\" aria-current=\"true\"><span class=\"ds-nav__no\">05</span><span class=\"ds-nav__label\">Work</span></a></li><li><a class=\"ds-nav__link\" href=\"#about\"><span class=\"ds-nav__no\">09</span><span class=\"ds-nav__label\">About</span></a></li></ul><a class=\"ds-nav__issue\" href=\"#contact\">10 ISSUE &rarr;</a></nav><span class=\"ds-nav__progress\" aria-hidden=\"true\"></span></header>",
+      "css": ".ds-nav { background: color-mix(in oklab, var(--color-print-200, #d6d2e2) 95%, transparent); border-bottom: 1px solid var(--color-ink-700, #2e2378); } .ds-nav__bar { display: flex; align-items: center; gap: 1.75rem; padding: 0.75rem clamp(1rem, 3vw, 2.5rem); } .ds-nav__brand { font-family: 'Archivo Narrow', ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.14em; color: var(--color-ink-700, #2e2378); } .ds-nav__list { display: flex; align-items: center; gap: 1.75rem; margin: 0 0 0 auto; padding: 0; list-style: none; } .ds-nav__link { display: flex; align-items: baseline; gap: 0.5rem; min-height: 2.75rem; text-decoration: none; } .ds-nav__no { font-family: Lekton, ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.625rem; letter-spacing: 0.12em; color: var(--color-ink-300, #5a5199); transition: color 300ms; } .ds-nav__label { font-family: 'Archivo Narrow', ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 0.75rem; line-height: 0.94; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink-500, #4a3da0); transition: color 300ms; } .ds-nav__link:hover .ds-nav__label { color: var(--color-ink-900, #16151c); } .ds-nav__link:focus-visible { outline: 2px solid var(--color-redline, #a82a15); outline-offset: 3px; } .ds-nav__link.is-active .ds-nav__no { color: var(--color-redline, #a82a15); } .ds-nav__link.is-active .ds-nav__label { color: var(--color-ink-900, #16151c); } .ds-nav__issue { font-family: Lekton, ui-monospace, monospace; font-size: 0.6875rem; letter-spacing: 0.14em; color: var(--color-plate, #4f31c4); text-decoration: underline; text-decoration-color: color-mix(in oklab, var(--color-plate, #4f31c4) 40%, transparent); text-decoration-thickness: 1px; text-underline-offset: 4px; transition: color 300ms; } .ds-nav__issue:hover { color: var(--color-plate-deep, #38228f); } .ds-nav__progress { display: block; height: 2px; width: 38%; background: var(--color-redline, #a82a15); }"
+    },
+    {
+      "name": "Revision Register Row",
+      "kind": "custom",
+      "refersTo": "field-label",
+      "description": "The set's argument made visible: numbered triangles down the sheet edge, each naming a revision and its status. Issued is a filled ink triangle with knocked-out numerals; held is outlined in red pencil, because red pencil marks what has not been issued yet. Every row must stay checkable against PRODUCT.md.",
+      "html": "<div class=\"ds-register\"><p class=\"ds-register__head\">Issue register</p><ol class=\"ds-register__list\"><li class=\"ds-register__row\"><svg class=\"ds-register__tri\" viewBox=\"0 0 18 16\" aria-hidden=\"true\"><path d=\"M 9 1 L 17 15 L 1 15 Z\" fill=\"var(--color-ink-700, #2e2378)\" stroke=\"var(--color-ink-700, #2e2378)\" stroke-width=\"1.4\"></path><text x=\"9\" y=\"13\" text-anchor=\"middle\" font-size=\"7.5\" font-family=\"Lekton, monospace\" fill=\"var(--color-knock, #f2f0f7)\">07</text></svg><div><p class=\"ds-register__item\">Set redrawn</p><p class=\"ds-register__note\">Ten sheets reissued as one drawing set.</p><p class=\"ds-register__meta\">SH 01&ndash;10 &middot; ISSUED</p></div></li><li class=\"ds-register__row\"><svg class=\"ds-register__tri\" viewBox=\"0 0 18 16\" aria-hidden=\"true\"><path d=\"M 9 1 L 17 15 L 1 15 Z\" fill=\"none\" stroke=\"var(--color-redline, #a82a15)\" stroke-width=\"1.4\"></path><text x=\"9\" y=\"13\" text-anchor=\"middle\" font-size=\"7.5\" font-family=\"Lekton, monospace\" fill=\"var(--color-redline, #a82a15)\">08</text></svg><div><p class=\"ds-register__item ds-register__item--held\">Client names</p><p class=\"ds-register__note\">Held pending release. Not ours to print.</p><p class=\"ds-register__meta\">SH 05 &middot; HELD</p></div></li></ol></div>",
+      "css": ".ds-register { min-width: 0; max-width: 22rem; } .ds-register__head { margin: 0; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-ink-700, #2e2378); font-family: Lekton, ui-monospace, monospace; font-size: 0.6875rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-500, #4a3da0); } .ds-register__list { margin: 0; padding: 0; list-style: none; } .ds-register__row { display: flex; gap: 0.75rem; padding-block: 0.75rem; border-bottom: 1px solid color-mix(in oklab, var(--color-ink-700, #2e2378) 25%, transparent); } .ds-register__tri { flex-shrink: 0; width: 1rem; height: 0.875rem; margin-top: 0.125rem; } .ds-register__item { margin: 0; font-family: 'Archivo Narrow', ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 0.75rem; line-height: 0.94; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink-700, #2e2378); } .ds-register__item--held { color: var(--color-redline, #a82a15); } .ds-register__note { margin: 0.25rem 0 0; font-family: Lekton, ui-monospace, monospace; font-size: 0.6875rem; line-height: 1.375; color: var(--color-ink-500, #4a3da0); } .ds-register__meta { margin: 0.25rem 0 0; font-family: Lekton, ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 0.625rem; letter-spacing: 0.1em; color: var(--color-ink-300, #5a5199); }"
+    },
+    {
+      "name": "Revision Cloud",
+      "kind": "custom",
+      "refersTo": "illustrative-stamp",
+      "description": "Encircles unissued data with a genuine cloud: a closed path of outward-bulging SVG arcs walked clockwise, 26px scallop pitch, arc radius 1.22x the half-chord so the scallops are fatter than semicircles. TWO OFFSETS, BOTH LOAD-BEARING: the SVG sits 14px outside the container (PAD) and the path is drawn 8px inside the SVG (BULGE), so the outermost arc tip lands only 6px beyond the box. Without the inset the arcs bulged a full radius past the container and were sliced flush at the viewport edges on a 390px screen, leaving half-arc nubs down both sides where the cloud's vertical runs should have been — do not collapse PAD and BULGE into one number and do not set BULGE to zero. The path below was generated by the shipped algorithm for a 224x48 box. The first attempt used a CSS repeating-radial-gradient mask on a border, which renders as a dashed rectangle with square corners and no convex arcs at all — it was removed and must not be reintroduced.",
+      "html": "<div class=\"ds-cloud\"><svg class=\"ds-cloud__svg\" viewBox=\"0 0 252 76\" aria-hidden=\"true\"><path d=\"M 8 8 A 16.00 16.00 0 0 1 34.22 8.00 A 16.00 16.00 0 0 1 60.44 8.00 A 16.00 16.00 0 0 1 86.67 8.00 A 16.00 16.00 0 0 1 112.89 8.00 A 16.00 16.00 0 0 1 139.11 8.00 A 16.00 16.00 0 0 1 165.33 8.00 A 16.00 16.00 0 0 1 191.56 8.00 A 16.00 16.00 0 0 1 217.78 8.00 A 16.00 16.00 0 0 1 244.00 8.00 A 18.30 18.30 0 0 1 244.00 38.00 A 18.30 18.30 0 0 1 244.00 68.00 A 16.00 16.00 0 0 1 217.78 68.00 A 16.00 16.00 0 0 1 191.56 68.00 A 16.00 16.00 0 0 1 165.33 68.00 A 16.00 16.00 0 0 1 139.11 68.00 A 16.00 16.00 0 0 1 112.89 68.00 A 16.00 16.00 0 0 1 86.67 68.00 A 16.00 16.00 0 0 1 60.44 68.00 A 16.00 16.00 0 0 1 34.22 68.00 A 16.00 16.00 0 0 1 8.00 68.00 A 18.30 18.30 0 0 1 8.00 38.00 A 18.30 18.30 0 0 1 8.00 8.00 Z\" fill=\"none\" stroke=\"var(--color-redline, #a82a15)\" stroke-width=\"1.6\" stroke-linejoin=\"round\"></path></svg><span class=\"ds-cloud__label\">REV 08</span><dl class=\"ds-cloud__content\"><div><dt class=\"ds-cloud__dt\">Client</dt><dd class=\"ds-cloud__dd\">HOLD</dd></div></dl></div>",
+      "css": ".ds-cloud { position: relative; width: 224px; height: 48px; margin: 14px; } .ds-cloud__svg { position: absolute; left: -14px; top: -14px; width: 252px; height: 76px; overflow: visible; pointer-events: none; } .ds-cloud__label { position: absolute; top: -22px; left: 28px; padding-inline: 0.375rem; background: var(--color-print-200, #d6d2e2); font-family: Lekton, ui-monospace, monospace; font-size: 0.6875rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-redline, #a82a15); } .ds-cloud__content { margin: 0; padding: 0.25rem 0.5rem; } .ds-cloud__dt { font-family: Lekton, ui-monospace, monospace; font-size: 0.6875rem; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-500, #4a3da0); } .ds-cloud__dd { display: inline-block; margin: 0.375rem 0 0; padding: 0.125rem 0.375rem; font-family: Lekton, ui-monospace, monospace; font-size: 0.875rem; letter-spacing: 0.1em; color: var(--color-ink-300, #5a5199); background-image: repeating-linear-gradient(-45deg, color-mix(in oklab, var(--color-ink-300, #5a5199) 22%, transparent) 0 2px, transparent 2px 6px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Drawing Office",
+    "overview": "The page is not a website about a studio that draws systems; it is a drawing set the studio issued. Ten sheets, numbered 01 to 10, each with a printed strip carrying its number and title, registration crosses in the frame margin, a drafting grid faint enough to letter over, and a violet title block in the bottom-right where every drawing standard puts one. The argument of the product — that this studio maps whole systems and reissues them cheaply — is made by the artifact's own form rather than asserted in copy. The issue register is the proof: it lists what the set has genuinely issued and what it is genuinely holding, and every held row is a real gap.\n\nThe print is a diazo whiteprint, not a cyanotype. A blueprint proper is a negative — white lines on Prussian blue — and it is also the process the drawing office abandoned. What replaced it, the diazo, develops the other way round: blue-violet ink on a ground the ammonia leaves faintly cool. So the ground carries a violet cast rather than being neutral paper, and the brand's violet is not an accent laid over the page. It is the ink every line is drawn in. This is the single most important thing to preserve: the palette has one printing ink, and inverting the ground to a dark field would not be a theme variant, it would be a different and abandoned process.\n\nThe system is deliberately flat and deliberately square. There are no shadows, no radii, no gradients, no glass, no glow, and — critically — no cards. Depth comes from ink weight and from two grounds one step apart, the way it does on paper. Confirmed rejections, stated in the direction contract at pages/_document.tsx and honoured in the build: this category's dark hero, its gradient accent, and its particle field.",
+    "keyCharacteristics": [
+      "One printing ink (ink-700) for everything printed; violet is the ink, never a highlight.",
+      "Sheets, ruled schedules and title-block field grids as containers — never cards.",
+      "Zero border radius anywhere, zero box-shadows anywhere.",
+      "Exactly one motion device: ink drawing itself on, at one plotter speed.",
+      "Red pencil is reserved: corrections, current revision, held data, focus rings.",
+      "Wide technical drawings are replaced below the breakpoint, never shrunk and never scrolled sideways.",
+      "Every measurement is typed in a typewriter face with tabular figures; every label is engraved in the same face.",
+      "The small-type scale is four named steps and no literals: .note 14px, .note-fine 13px, .field 11px, .field-sm 10px.",
+      "Data the studio does not have is displayed as held, not omitted."
+    ],
+    "rules": [
+      {
+        "name": "The One Ink Rule",
+        "body": "Everything printed on this page is ink-700. Not \"mostly\" — the sheet borders, the linework, the lettering and the prose are one ink, because a diazo print has one. Near-black exists as a token but is confined to borders, field values and backdrops; it is never the colour of running text. A second text hue introduced anywhere is a regression.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Floor Rule",
+        "body": "ink-300 (#5a5199) and redline (#a82a15) are contrast-solved values, not aesthetic picks. They were darkened from #7d73b8 and #c4331c, which measure 2.83:1 and 3.69:1 against the standard ground and therefore fail AA for small text. The shipped values are the shallowest that clear 4.5:1 against both sheet grounds (ink-300: 4.62:1 on print-200, 5.21:1 on print-100; redline: 4.71:1 and 5.32:1). Do not lighten them for prettiness. The same arithmetic overruled two drafted values, and the direction contract at pages/_document.tsx now records the overrule rather than contradicting it: it names the shipped #4F31C4 and #A82A15, states that the drafted #5B3FD9 and #C4331C measured 4.49:1 and 3.69:1 on this ground and failed AA for small text, and instructs do not restore. The contract and the token layer agree; keep them that way.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reserved Pencil Rule",
+        "body": "Red pencil marks what is wrong, what is unissued, or what is not substantiated. It is never decoration and never a second accent. If red appears on something that is finished and true, the mark is lying.",
+        "section": "colors"
+      },
+      {
+        "name": "The Brand-In-The-Ink Rule",
+        "body": "The brand mark renders in ink-700, not in brand violet #8B5CF6. brand-source/BRAND.md restricts the violet lockup to screens whose ground is dark enough to carry it, and this ground is a whiteprint. The brand colour is not absent from the page — it is the ink everything else is drawn in. Do not \"fix\" the mark by recolouring it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Typed-Not-Lettered Rule",
+        "body": "Numbers are typed; words are lettered. Any measurement, sheet number, revision, date or metric goes in Lekton with tabular figures. Prose goes in Archivo. Headings go in Archivo Narrow, uppercase. A number set in the body face is a mistake in the same way a hand-lettered dimension would be on a real drawing.",
+        "section": "typography"
+      },
+      {
+        "name": "The Label-Before-Value Rule",
+        "body": "No value appears without an engraved label above it. A reader browses this page by label, not by prose, which is what makes a fixed field order worth having.",
+        "section": "typography"
+      },
+      {
+        "name": "The Four Steps Rule",
+        "body": "Below the headline sizes, the ramp is four named classes and no arbitrary values: .note (14px), .note-fine (13px), .field (11px), .field-sm (10px). That is the whole small-type scale. A repeated text-[…] literal is not a local decision, it is a missing step — sixteen call sites each carrying text-[0.8125rem] is what earned .note-fine, and three carrying text-[0.625rem] is what earned .field-sm. If a new size seems necessary, first check whether it can fold up into the step above it, the way the stamp overline's 0.5625rem did. 10px is the floor.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Notes Rule",
+        "body": "`.note-fine` must stay declared after `.note` in styles/globals.css. Both live in the same @layer components, so an element carrying both resolves to whichever is declared last, and the fine print has to be the one that wins. Reordering those two blocks silently reverts every fine-print caller on the page to 14px, with no error and no visual warning at the call site. Audit test: an element with class=\"note note-fine\" computes to 13px.",
+        "section": "typography"
+      },
+      {
+        "name": "The Replace-Don't-Shrink Rule",
+        "body": "When a drawing is too wide for the viewport, hide it and render its content another way — a list, a definition list, stacked field blocks. Never scale it down to unreadable, and never wrap it in a horizontal scroller. Audit test: at 390px wide, no element requires sideways scrolling and no drawn label is below 10px.",
+        "section": "layout"
+      },
+      {
+        "name": "The Nothing-Floats Rule",
+        "body": "No box-shadow, no backdrop-filter, no translucent glass panel, no lifted hover. If an element needs to read as separate, give it a heavier rule, a different ground, or a plate. Hover states move down onto the paper (the stamp presses to scale(0.98)), never up off it.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Corner Rule",
+        "body": "Radius is zero, everywhere, on everything. A rounded container in this system is immediately foreign. Curves are drawn in ink or they do not exist.",
+        "section": "shapes"
+      },
+      {
+        "name": "The One Motion Rule",
+        "body": "The set has one motion vocabulary: ink drawing itself on. No parallax, no scale-on-hover, no fade-up-and-slide as a general-purpose entrance, no particle field, no 3D scene. If a new element needs to animate, it draws.",
+        "section": "components"
+      },
+      {
+        "name": "The One Plotter Speed Rule",
+        "body": "Draw duration is derived from measured path length at ~900 units/sec, clamped 0.5–2.4s. Never hand-set a draw duration — a set where one line draws faster than another has two plotters.",
+        "section": "components"
+      },
+      {
+        "name": "The Full Gate Rule",
+        "body": "Any attribute a timeline animates from a hidden start must appear in both the :root.js pre-paint block and the reduced-motion block of styles/globals.css. Five families are gated today — [data-reveal], [data-arrival], [data-callout], [data-letter] > span, [data-draw]. Adding a new animated attribute family is a two-line stylesheet change, not just a component change, and skipping either line ships a bug that never throws.",
+        "section": "components"
+      },
+      {
+        "name": "The One Owner Rule",
+        "body": "One property, one tween. A scrubbed tween captures its start value at creation time and, as the last renderer, pins the property there — so if CSS or another tween also owns that property, the scrubbed one wins and it may have captured the wrong value. Sheet 02's symptom list was the case: its <li>s carried data-reveal AND data-symptom, the scrubbed [data-symptom] tween read the stylesheet's pre-reveal opacity 0, and an entire schedule went invisible on desktop. The fix is both halves — drop the second attribute so only one tween touches opacity, and use fromTo so the tween states both ends instead of reading whatever it happens to find. Never let an element carry two attributes that animate the same property, and always write a scrubbed opacity tween as fromTo.",
+        "section": "components"
+      },
+      {
+        "name": "The Held-Not-Hidden Rule",
+        "body": "Data the studio does not have is displayed as held or stamped illustrative. It is never quietly omitted, and it is never filled with a plausible invention.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do print everything in one ink (ink-700), and reach for a heavier rule or a different ground when you need separation.",
+      "Do keep ink-300 at #5a5199 and redline at #a82a15. They are contrast-solved (4.62:1 and 4.71:1 on the standard ground) and their predecessors failed AA at 2.83:1 and 3.69:1.",
+      "Do render the brand mark in ink. brand-source/BRAND.md binds violet to dark grounds only, and this ground is a whiteprint.",
+      "Do build containers as sheets, ruled schedules, or title-block field grids.",
+      "Do replace a wide drawing below md/lg with a list or stacked field blocks carrying the same content.",
+      "Do put an engraved label above every value, and type every number in the measure face with tabular figures.",
+      "Do reach for one of the four named small-type steps — .note (14px), .note-fine (13px), .field (11px), .field-sm (10px) — instead of writing a text-[…] literal. If none fits, fold the need up into the step above rather than adding a fifth.",
+      "Do keep .note-fine declared after .note in styles/globals.css. Same cascade layer, last one wins, and the fine print has to be the winner.",
+      "Do keep the ISSUE_REGISTER true. Every row must remain checkable against PRODUCT.md — the register's entire authority is that all of it is verifiable. As shipped, all four rows check out: the three held rows correspond exactly to PRODUCT.md's unsupplied client names, placeholder case-study metrics, and undecided contact route.",
+      "Do animate by drawing, using drawLines on [data-draw] paths — and only call it in a sheet that actually has some, since it measures nodes rather than guarding for their absence.",
+      "Do keep both gates on all five animated families — [data-reveal], [data-arrival], [data-callout], [data-letter] > span, [data-draw] — in both the :root.js block and the reduced-motion block.",
+      "Do write a scrubbed opacity tween as fromTo with both ends stated, and make sure exactly one tween owns any given property on any given node.",
+      "Do seed any randomness through lib/seed.ts and round it with fixed()."
+    ],
+    "donts": [
+      "Don't invert the ground to a dark field or reintroduce a dark hero. A cyanotype is the other, abandoned process; this is a diazo whiteprint.",
+      "Don't lighten ink-300 or redline for prettiness, and don't restore the drafted #5B3FD9 plate or #C4331C red pencil — they measure 4.49:1 and 3.69:1 and fail AA for small text. The direction contract names them as rejected and says so.",
+      "Don't recolour the brand mark to #8B5CF6.",
+      "Don't introduce cards. A card grid in this system is a regression, and so is any lifted, rounded, or shadowed content box.",
+      "Don't add a box-shadow, a border-radius, a gradient, a blur, or a backdrop-filter anywhere.",
+      "Don't use red pencil decoratively. It marks corrections, the current revision, and held data — nothing else.",
+      "Don't rebuild the revision cloud with a CSS repeating-radial-gradient mask. It renders as a dashed rectangle; it was tried and removed.",
+      "Don't put a wide drawing in a horizontal scroll box, and don't shrink one to illegibility. overflow-x-auto currently appears nowhere in the codebase — keep it that way.",
+      "Don't invent a dated or superseded revision for the issue register, and don't add a second motion vocabulary.",
+      "Don't hand-set a draw duration, and don't move the js flag out of the blocking inline script.",
+      "Don't write a text-[…] size literal, and don't move .note-fine above .note in the stylesheet — the fine print silently jumps to 14px.",
+      "Don't animate a new attribute family from JS without adding it to both gate blocks, and don't let two tweens own the same property on the same node.",
+      "Don't remove RevisionCloud's 8px path inset. Without it the arcs are sliced flush at the viewport edge on a phone.",
+      "Don't extend ui/scrollbar, ui/RichTextEditor, ui/VisuallyHiddenInput or ui/Logo — they are dead template scaffold, not part of this system."
+    ]
+  }
+}

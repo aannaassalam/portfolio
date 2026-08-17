@@ -20,14 +20,18 @@ print, and at favicon size.
 Every viewBox in these files is **measured** from the artwork's real ink
 bounds by a browser, not computed by hand. An earlier revision shipped four
 files clipped at the bottom because the bounding box was asserted rather than
-measured; `verify.js` in the build now fails loudly if any file clips.
+measured; `qc.js` in the build now fails loudly if any file clips.
 
 ## Files
 
+The suffix names the **background**, not the ink: `-dark` files are white and
+go on a dark ground, `-light` files are black and go on a light one. Every
+file in `public/brand/` follows that, so read the table the same way.
+
 | File                               | Use                                                                                                               |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `synk-logo-dark.svg`               | **Primary.** Mark + SYNK, ink on light. Letterheads, documents, invoices.                                         |
-| `synk-logo-light.svg`              | Primary, reversed for dark backgrounds.                                                                           |
+| `synk-logo-dark.svg`               | **Primary.** Mark + SYNK, white, for a dark ground.                                                               |
+| `synk-logo-light.svg`              | Primary in black, for letterheads, documents and invoices.                                                        |
 | `synk-logo-violet.svg`             | Accent version. Screen only — never on paper.                                                                     |
 | `synk-logo-full-dark/light.svg`    | Adds the INNOVATIONS descriptor, tracked to exactly the width of SYNK. Use where the full legal name must appear. |
 | `synk-logo-stacked-dark/light.svg` | Square-ish spaces: social avatars, signage, merchandise.                                                          |

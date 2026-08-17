@@ -92,6 +92,27 @@ export function useScrollEnergy() {
 }
 
 /**
+ * Scroll lock. `overflow: hidden` on the documentElement is not enough while
+ * Lenis is driving: it keeps consuming wheel and touch and scrolling the page
+ * behind whatever is on top. SmoothScroll registers its instance here so an
+ * overlay can stop the real scroller, and the CSS lock still covers the
+ * reduced-motion path where no Lenis exists.
+ */
+type Scroller = { stop: () => void; start: () => void };
+let scroller: Scroller | null = null;
+
+export function registerScroller(instance: Scroller | null) {
+  scroller = instance;
+}
+
+export function lockScroll(locked: boolean) {
+  if (!checkWindow()) return;
+  document.documentElement.style.overflow = locked ? "hidden" : "";
+  if (locked) scroller?.stop();
+  else scroller?.start();
+}
+
+/**
  * Subscribes to a media query. useSyncExternalStore rather than
  * useState-in-an-effect: the server snapshot is explicit, and the value is
  * read during render instead of one paint late.
@@ -140,6 +161,43 @@ export function revealChildren(scope: HTMLElement, start = "top 78%") {
     ease: "expo.out",
     stagger: 0.09,
     scrollTrigger: { trigger: scope, start }
+  });
+}
+
+/**
+ * The set's one motion: ink drawing itself onto the sheet.
+ *
+ * Every `[data-draw]` path is measured, its own length written back as the
+ * --len custom property the stylesheet already uses for the pre-hidden dash
+ * offset, then drawn to zero. Measuring per-path rather than assuming a
+ * length is what keeps a short leader line from crawling while a long section
+ * cut snaps: the duration is scaled off the real length, so every line on the
+ * sheet draws at one speed, the way a plotter does.
+ */
+export function drawLines(scope: HTMLElement, { start = "top 80%" } = {}) {
+  const paths = scope.querySelectorAll<SVGGeometryElement>("[data-draw]");
+  if (!paths.length) return;
+
+  paths.forEach((path) => {
+    // getTotalLength throws on a detached or display:none element; a sheet
+    // hidden at this point simply keeps its stylesheet default.
+    let len = 1200;
+    try {
+      len = Math.max(1, Math.round(path.getTotalLength()));
+    } catch {
+      /* keep the fallback */
+    }
+    path.style.setProperty("--len", String(len));
+    path.style.strokeDasharray = String(len);
+    path.style.strokeDashoffset = String(len);
+
+    gsap.to(path, {
+      strokeDashoffset: 0,
+      // One plotter speed for the whole sheet: ~900 user units a second.
+      duration: gsap.utils.clamp(0.5, 2.4, len / 900),
+      ease: "none",
+      scrollTrigger: { trigger: scope, start }
+    });
   });
 }
 

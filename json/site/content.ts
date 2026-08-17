@@ -11,6 +11,119 @@ export const BRAND = {
   tagline: "Designed for today. Engineered for what comes next."
 };
 
+/**
+ * The page is one drawing set, so every section is a sheet and carries a
+ * sheet number and a drawing-set title. The order is the narrative order and
+ * must not be reshuffled; the ids are the anchors NAV_LINKS and the footer
+ * already point at.
+ */
+export const SHEETS = [
+  { no: "01", title: "General arrangement", id: "top" },
+  { no: "02", title: "Existing conditions", id: "conditions" },
+  { no: "03", title: "Schedule of works", id: "services" },
+  { no: "04", title: "Bill of materials", id: "materials" },
+  { no: "05", title: "Issued sheets", id: "work" },
+  { no: "06", title: "Issue sequence", id: "process" },
+  { no: "07", title: "Section through system", id: "section" },
+  { no: "08", title: "General notes", id: "notes" },
+  { no: "09", title: "Drawn by", id: "about" },
+  { no: "10", title: "Issue", id: "contact" }
+] as const;
+
+export type Sheet = (typeof SHEETS)[number];
+
+/**
+ * The issue register — the set's revision layer, and the reason the form is
+ * called a revision set rather than an issue set.
+ *
+ * Every row here is TRUE. No invented dates and no fictional superseded
+ * revisions: the register lists what this set has actually issued and what it
+ * is genuinely holding, which is exactly the set of launch blockers PRODUCT.md
+ * records. That is what makes the thesis demonstrable instead of asserted —
+ * the page can point at its own unissued information.
+ */
+export const ISSUE_REGISTER = [
+  {
+    rev: "07",
+    status: "issued",
+    item: "Set redrawn",
+    note: "Ten sheets reissued as one drawing set.",
+    sheets: "01–10"
+  },
+  {
+    rev: "08",
+    status: "held",
+    item: "Client names",
+    note: "Held pending release. Not ours to print.",
+    sheets: "05"
+  },
+  {
+    rev: "08",
+    status: "held",
+    item: "Project figures",
+    note: "Illustrative until substantiated.",
+    sheets: "05"
+  },
+  {
+    rev: "08",
+    status: "held",
+    item: "Enquiry route",
+    note: "Form to be issued. No address published.",
+    sheets: "10"
+  }
+] as const;
+
+export const HELD_COUNT = ISSUE_REGISTER.filter(
+  (r) => r.status === "held"
+).length;
+
+/**
+ * What sits between each pair of layers. Sheet 01 draws the layers; this is
+ * the information sheet 01 does not carry — a section is only worth drawing if
+ * it shows the junctions, and the junctions are where this studio's claims
+ * actually live.
+ */
+export const BOUNDARIES = [
+  {
+    between: "Interface / Application",
+    detail:
+      "Typed view models. The interface owns no domain rule it could get wrong."
+  },
+  {
+    between: "Application / API",
+    detail:
+      "Versioned contracts. Schema evolution is a release, never an accident."
+  },
+  {
+    between: "API / Intelligence",
+    detail:
+      "Evaluated calls. Model output is checked before a user ever sees it."
+  },
+  {
+    between: "Intelligence / Data",
+    detail:
+      "Retrieval boundaries. Every answer can name the source it came from."
+  },
+  {
+    between: "Data / Infrastructure",
+    detail: "Queues and idempotency keys, so a retry never costs twice."
+  }
+] as const;
+
+/** Title-block constants. Every sheet prints the same fields in the same order. */
+export const SET = {
+  project: BRAND.name,
+  drawing: "Digital engineering practice",
+  scale: "1:1",
+  drawnBy: "SYNK",
+  checked: "—",
+  sheetCount: SHEETS.length,
+  /** Bumped when the set is reissued; printed on every title block. */
+  revision: "07",
+  /** The set's own issue status, printed in the stamp. */
+  status: "Issued for tender"
+} as const;
+
 export const NAV_LINKS = [
   { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },

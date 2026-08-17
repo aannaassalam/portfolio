@@ -10,31 +10,47 @@
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1792px;
 
-  /* Surfaces — never flat black everywhere; each step reads as depth. */
-  --color-ink-950: #050505;
-  --color-ink-900: #080808;
-  --color-ink-850: #0b0b0f;
-  --color-ink-800: #101014;
-  --color-ink-700: #16161c;
-  --color-ink-600: #1f1f28;
+  /* ---------------------------------------------------------------------
+     Diazo print, not cyanotype.
+     A blueprint proper is a negative: white lines on Prussian blue. It is
+     also the process the drawing office abandoned. What replaced it — the
+     diazo, or whiteprint — develops the other way round: blue-violet ink on
+     a ground the ammonia leaves faintly cool. So the ground carries a violet
+     cast rather than being neutral paper, and the brand's violet becomes the
+     ink every line on this site is drawn in, not an accent laid over it.
+     --------------------------------------------------------------------- */
 
-  /* Accent */
-  --color-violet-200: #ddd6fe;
-  --color-violet-300: #c4b5fd;
-  --color-violet-400: #a855f7;
-  --color-violet-500: #8b5cf6;
-  --color-violet-600: #7c3aed;
-  --color-violet-900: #4c1d95;
+  /* Ground: the print itself. Warm-neutral would be paper; this is developed. */
+  --color-print-050: #eceaf2;
+  --color-print-100: #e2dfec;
+  --color-print-200: #d6d2e2;
+  --color-print-300: #c3bed4;
+  --color-print-400: #a9a3bd;
 
-  /* Type */
-  --color-chalk: #f5f5f5;
-  --color-mist: #a1a1aa;
-  --color-slate-muted: #8a8a94;
+  /* Ink: the diazo line, at the three weights a set actually prints. */
+  --color-ink-900: #16151c;
+  --color-ink-700: #2e2378;
+  --color-ink-500: #4a3da0;
+  --color-ink-300: #5a5199;
 
-  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  /* Plate: solid fields with knocked-out lettering — title blocks, stamps. */
+  --color-plate: #4f31c4;
+  --color-plate-deep: #38228f;
+  --color-knock: #f2f0f7;
 
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Red pencil. Corrections, current revision, and every illustrative figure.
+     Darker than a real pencil looks on paper, deliberately: the ILLUSTRATIVE
+     stamp sets at 10px, and a truer vermilion measured 3.69:1 on this ground —
+     large-text only. These values are the shallowest that clear 4.5:1 against
+     BOTH sheet grounds; do not lighten them for prettiness. */
+  --color-redline: #a82a15;
+  --color-redline-soft: #c9634f;
+
+  --font-draft: var(--font-draft), ui-sans-serif, system-ui, sans-serif;
+  --font-chrome: var(--font-chrome), ui-sans-serif, system-ui, sans-serif;
+  --font-measure: var(--font-measure), ui-monospace, monospace;
+
+  --ease-draw: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
@@ -43,16 +59,15 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-ink-600);
+    border-color: var(--color-print-300);
   }
 
   html {
-    background-color: var(--color-ink-950);
-    color-scheme: dark;
+    background-color: var(--color-print-200);
+    color-scheme: light;
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* Lenis drives scrolling; native smooth-scroll would fight it. */
   html.lenis,
   html.lenis body {
     height: auto;
@@ -62,38 +77,39 @@
   }
 
   body {
-    background-color: var(--color-ink-950);
-    color: var(--color-chalk);
-    font-family: var(--font-sans);
+    background-color: var(--color-print-200);
+    color: var(--color-ink-700);
+    font-family: var(--font-draft);
     overflow-x: hidden;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
 
+  /* The browser's own surfaces belong to the drawing office too. */
   ::selection {
-    background: color-mix(in oklab, var(--color-violet-500) 40%, transparent);
-    color: #fff;
+    background: var(--color-plate);
+    color: var(--color-knock);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-violet-400);
+    outline: 2px solid var(--color-redline);
     outline-offset: 3px;
-    border-radius: 2px;
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--color-ink-950);
+    background: var(--color-print-100);
+    border-left: 1px solid var(--color-print-300);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-ink-600);
-    border: 3px solid var(--color-ink-950);
-    border-radius: 99px;
+    background: var(--color-ink-700);
+    border: 4px solid var(--color-print-100);
+    border-radius: 0;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-violet-900);
+    background: var(--color-plate);
   }
 
   h1,
@@ -105,108 +121,197 @@
   p {
     text-wrap: pretty;
   }
+
+  /* Measurements are typed on a drawing, never lettered — so they get tabular
+     figures wherever they appear, which keeps revision columns from wobbling. */
+  .font-measure,
+  [class*="font-measure"] {
+    font-variant-numeric: tabular-nums;
+  }
 }
 
 @layer components {
-  /* Repeated three times or more across sections — everything else stays inline. */
-  .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--color-slate-muted);
-  }
+  /* ---- Sheet chrome -------------------------------------------------- */
 
-  .hairline {
-    height: 1px;
-    width: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--color-ink-600) 18%,
-      var(--color-ink-600) 82%,
-      transparent
-    );
-  }
+  /* The sheet frame lives in ui/Sheet/Sheet.tsx, which owns a 2px top rule.
+     There was a `.sheet` class here declaring a 1px box that nothing applied —
+     two competing definitions of the same thing, so the unused one is gone. */
 
   .shell {
     width: 100%;
-    max-width: 90rem;
+    max-width: 96rem;
     margin-inline: auto;
-    padding-inline: clamp(1.25rem, 5vw, 5rem);
+    padding-inline: clamp(1rem, 3vw, 2.5rem);
   }
 
-  /* Section seam. A flat 1px border across a full-bleed dark section reads as
-     a hard cut; this fades the line out at both ends and floats a faint violet
-     bloom above it, so the join reads as one surface changing depth.
-     Deliberately ::before — .grain already owns ::after on several sections. */
-  .seam {
-    position: relative;
+  /* Engraved field label. Used for every title-block field name and note
+     heading, so the same words always look like the same kind of word. */
+  .field {
+    font-family: var(--font-measure);
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-500);
   }
-  .seam::before {
-    content: "";
-    position: absolute;
-    inset-inline: 0;
-    top: 0;
-    height: 160px;
-    pointer-events: none;
-    background:
+
+  /* The second and last step of the label scale. Three call sites carried
+     0.625rem as a literal and the stamp's overline carried 0.5625rem for a
+     single use — folded up to this step rather than earning one of its own. */
+  .field-sm {
+    font-family: var(--font-measure);
+    font-size: 0.625rem;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .field-knock {
+    color: color-mix(in oklab, var(--color-knock) 72%, transparent);
+  }
+
+  /* Drawn lettering: the sheet titles. Condensed, capitalised, monolinear. */
+  .lettering {
+    color: var(--color-ink-700);
+    font-family: var(--font-chrome);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 0.94;
+    text-transform: uppercase;
+  }
+
+  /* A note on a drawing: running prose, set narrow, always beneath a field. */
+  .note {
+    max-width: 68ch;
+    font-size: 0.875rem;
+    line-height: 1.62;
+    color: color-mix(
+      in oklab,
+      var(--color-ink-700) 88%,
+      var(--color-print-200)
+    );
+  }
+
+  /* Notes come in two sizes on a drawing, and only two: the note and the fine
+     print beneath it. Declared after `.note` deliberately — both live in the
+     same cascade layer, so an element carrying both classes takes whichever
+     comes last, and this one has to win. It exists because sixteen call sites
+     each carried the same `text-[0.8125rem]` literal, and a repeated literal
+     is a missing step in the ramp rather than a local decision. */
+  .note-fine {
+    font-size: 0.8125rem;
+  }
+
+  /* ---- Grid ---------------------------------------------------------- */
+
+  /* The drafting grid, printed on the sheet at 8mm. Faint enough to letter
+     over, present enough that nothing on the page looks unplaced. */
+  .gridded {
+    background-image:
       linear-gradient(
-          90deg,
-          transparent,
-          var(--color-ink-600) 18%,
-          var(--color-ink-600) 82%,
-          transparent
-        )
-        top / 100% 1px no-repeat,
-      radial-gradient(
-        58% 100% at 50% 0%,
-        color-mix(in oklab, var(--color-violet-600) 11%, transparent),
-        transparent 72%
+        to right,
+        color-mix(in oklab, var(--color-ink-700) 5.5%, transparent) 0 1px,
+        transparent 1px 100%
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--color-ink-700) 5.5%, transparent) 0 1px,
+        transparent 1px 100%
       );
+    background-size: 1.25rem 1.25rem;
   }
 
-  /* Grain sits above surfaces, below content — kills gradient banding on black. */
-  .grain::after {
+  /* ---- Registration marks -------------------------------------------- */
+
+  .reg {
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    pointer-events: none;
+    color: var(--color-ink-500);
+  }
+  .reg::before,
+  .reg::after {
     content: "";
     position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+    background: currentColor;
+  }
+  .reg::before {
+    inset-inline: 0;
+    top: 50%;
+    height: 1px;
+  }
+  .reg::after {
+    inset-block: 0;
+    left: 50%;
+    width: 1px;
+  }
+
+  /* ---- Redline ------------------------------------------------------- */
+
+  /* Revision clouds are drawn as real arcs in ui/RevisionCloud — a CSS
+     mask on a border renders as a dashed rectangle, never as a cloud. */
+
+  /* Every illustrative figure wears this. Not a footnote — a stamp. */
+  .illustrative {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.125rem 0.375rem;
+    border: 1px solid var(--color-redline);
+    color: var(--color-redline);
+    font-family: var(--font-measure);
+    font-size: 0.625rem;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transform: rotate(-1.5deg);
+  }
+
+  /* A field held for data that does not exist yet. Displayed, not omitted. */
+  .held {
+    font-family: var(--font-measure);
+    color: var(--color-ink-300);
+    letter-spacing: 0.1em;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      color-mix(in oklab, var(--color-ink-300) 22%, transparent) 0 2px,
+      transparent 2px 6px
+    );
   }
 }
 
-/* Reveal primitives.
-   Every rule here is gated on BOTH `.js` and prefers-reduced-motion, and that
-   double gate is load-bearing:
-
-   - `.js` is set by a blocking inline script in _document, so it is present
-     before first paint but never present if scripting is off or the bundle
-     fails. Hiding unconditionally would leave those visitors staring at a
-     blank page forever, waiting on a GSAP that is never going to run.
-   - The motion query means a reduced-motion visitor gets the finished state
-     immediately, with nothing to un-hide.
-
-   The hero copy is pre-hidden here rather than by gsap.from() alone: the
-   markup is server-rendered, so without this it paints fully visible and then
-   snaps away the moment hydration lands. */
+/* ---------------------------------------------------------------------
+   Reveal primitives.
+   Both gates are load-bearing, exactly as before: `.js` is set by a blocking
+   inline script in _document so it lands before first paint and is absent
+   when scripting is unavailable, and the motion query hands a reduced-motion
+   visitor the finished state with nothing to un-hide. The ink-drawing
+   animation replaces the old translate-and-fade, but the contract is
+   identical — nothing is hidden unless something is guaranteed to reveal it.
+   --------------------------------------------------------------------- */
 :root.js [data-reveal],
-:root.js [data-scrub-hidden] {
+:root.js [data-arrival] {
+  opacity: 0;
+  transform: translateY(0.75rem);
+}
+
+/* Sheet 01's lettering rises out of an overflow-hidden line box, and its
+   callouts arrive from the left. Both are animated from JS, so both need the
+   same pre-paint gate as everything else: without it the server-rendered
+   markup paints in place and then snaps away the moment hydration lands. */
+:root.js [data-letter] > span {
+  transform: translateY(108%);
+}
+:root.js [data-callout] {
   opacity: 0;
 }
-:root.js [data-reveal] {
-  transform: translateY(1.25rem);
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  :root.js [data-hero-line] > span {
-    transform: translateY(118%);
-  }
-  :root.js [data-hero-fade] {
-    opacity: 0;
-    transform: translateY(24px);
-  }
+/* Linework draws itself: the dash offset is set here so the line is absent
+   before GSAP ever runs, and restored to zero when it does. */
+:root.js [data-draw] {
+  stroke-dasharray: var(--len, 1200);
+  stroke-dashoffset: var(--len, 1200);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -219,11 +324,16 @@
     scroll-behavior: auto !important;
   }
   [data-reveal],
-  [data-scrub-hidden],
-  [data-hero-line] > span,
-  [data-hero-fade] {
+  [data-arrival],
+  [data-callout],
+  [data-letter] > span {
     opacity: 1 !important;
     transform: none !important;
-    filter: none !important;
+  }
+  [data-draw] {
+    stroke-dashoffset: 0 !important;
+  }
+  .cloud::after {
+    transition: none !important;
   }
 }

@@ -1,0 +1,9 @@
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": ["ai-color-palette"],
+    "notes": {
+      "ai-color-palette": "Violet is a binding brand commitment documented in brand-source/BRAND.md, not a defaulted palette. In the Revision Set world it is the diazo ink the whole page is drawn in. Do not desaturate the site to satisfy this rule."
+    }
+  }
+}

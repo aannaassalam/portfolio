@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
-import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/motion";
+import {
+  gsap,
+  ScrollTrigger,
+  prefersReducedMotion,
+  registerScroller
+} from "@/lib/motion";
 
 /**
  * Drives the page with Lenis and hands ScrollTrigger the same clock, so
@@ -19,12 +24,14 @@ export default function SmoothScroll() {
     });
 
     lenis.on("scroll", ScrollTrigger.update);
+    registerScroller(lenis);
 
     const raf = (time: number) => lenis.raf(time * 1000);
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      registerScroller(null);
       gsap.ticker.remove(raf);
       lenis.destroy();
     };

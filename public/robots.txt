@@ -2,16 +2,8 @@
 User-agent: *
 Allow: /
 
-# Googlebot
-User-agent: Googlebot
-Allow: /blog
-
-# Bingbot
-User-agent: Bingbot
-Disallow: /private
-
 # Host
-Host: https://google.com
+Host: https://www.synkinnovations.in
 
 # Sitemaps
-Sitemap: https://google.com/sitemap.xml
+Sitemap: https://www.synkinnovations.in/sitemap.xml

@@ -1,6 +1,6 @@
 import EventListeners from "@/components/EventListener/EventListener";
 import { checkWindow } from "@/lib/functions/_helpers.lib";
-import { geist, geist_mono } from "@/lib/fonts";
+import { archivo, archivo_narrow, lekton } from "@/lib/fonts";
 import "@/styles/globals.css";
 import type { AppContext, AppProps } from "next/app";
 import App from "next/app";
@@ -93,7 +93,9 @@ export default function CustomApp({ Component, pageProps }: AppProps) {
   fixSSRLayout();
 
   return (
-    <div className={`${geist.variable} ${geist_mono.variable}`}>
+    <div
+      className={`${archivo.variable} ${archivo_narrow.variable} ${lekton.variable}`}
+    >
       {/* <SessionProvider session={pageProps.session}> */}
       <QueryClientProvider client={queryClient}>
         <EventListeners />

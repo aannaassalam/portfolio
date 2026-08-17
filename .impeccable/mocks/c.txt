@@ -1,0 +1,16 @@
+A high-fidelity desktop website design comp: a single full-bleed browser screen of a real working website, viewed straight on, filling the entire frame edge to edge. Flat, crisp, vector-like screen rendering. NOT a poster, NOT a photograph, NOT a device mockup, NOT a print piece on a desk.
+
+WORLD: the entire page is rendered as a diazo whiteprint from an engineering drawing office - blue-violet ink printed on a cool, faintly violet-cast ground. This is NOT a cyanotype blueprint: never white lines on navy blue. Exact palette, use only these: page ground #D6D2E2 (cool lavender-grey developed print), all linework and body text #2E2378 (diazo blue-violet ink), solid saturated fields #5B3FD9 with knocked-out #F2F0F7 lettering inside them, all corrections and current-revision marks #C4331C (red pencil). No other hues. No gradients, no neon, no glow, no drop shadows, no glass, no dark background.
+
+MATERIALS: a heavy drawn sheet border inset from the trim; small cross-hair registration marks at the sheet corners; a faint fine drafting grid across the drawing area; thin leader lines ending in small circular numbered callout bubbles; numbered revision triangles; freehand scalloped revision clouds drawn in red pencil.
+
+TYPE: all headings and sheet titles in condensed monolinear grotesque CAPITALS, resembling single-stroke gothic hand-lettering on an engineering drawing. Every number, date, sheet reference, dimension and metric in a typewriter monospace. Small letterspaced uppercase field labels sitting above each value.
+
+FORBIDDEN: do not invent client names, company logos, testimonials, prices, ratings or awards. No stock photography, no people, no faces, no 3D renders, no isometric illustration, no dark hero section, no purple gradient, no particle field.
+
+STRUCTURE - a single dense full-bleed sheet where red-pencil markup is the focal moment:
+1. The ENTIRE viewport is one busy technical plan of a whole software system at small scale, edge to edge: many thin blue-violet lines, dozens of small numbered callout bubbles, dimension strings with arrowheads, ruled tables of monospace figures in the lower left. High density, every part of the frame occupied, drawn over the faint drafting grid.
+2. THE FOCAL MOMENT, centre-right: a freehand scalloped revision cloud drawn in red pencil #C4331C around one region of the plan, with red freehand markup strokes, a red leader arrow, and a red monospace annotation reading "REV 07 - ISSUED". This red markup is the single loudest thing on the screen; everything blue-violet holds still beneath it.
+3. Left edge: the peeled edge of a superseded sheet beneath the top one - a paler ghosted copy of the same drawing showing the previous revision, as if two prints are stacked.
+4. Bottom-left corner: a compact solid #5B3FD9 title block with knocked-out pale lettering in ruled fields labelled PROJECT, SHEET, SCALE, and a rectangular outlined stamp reading "START A PROJECT".
+5. Top-right corner: a small monospace sheet index listing "01 GENERAL ARRANGEMENT" through "10 ISSUE".
