@@ -11,7 +11,7 @@ User-agent: Bingbot
 Disallow: /private
 
 # Host
-Host: https://google.com
+Host: https://synkinnovations.in
 
 # Sitemaps
-Sitemap: https://google.com/sitemap.xml
+Sitemap: https://synkinnovations.in/sitemap.xml
